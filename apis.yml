@@ -3,21 +3,61 @@ url: https://raw.githubusercontent.com/api-evangelist/envato/refs/heads/main/api
 name: Envato
 x-type: company
 description: >-
-  Envato runs Envato Elements (subscription) and Envato Market (per-purchase) platforms for creative assets — graphics, video, audio, themes, code, and templates.
+  Envato runs Envato Market (per-asset marketplaces like ThemeForest, CodeCanyon, AudioJungle,
+  VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock
+  media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and
+  earnings; Elements has a separate affiliate API.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Stock Media
-  - Creative
   - Marketplace
-  - Subscription
   - Themes
+  - Audio
+  - Video
+  - Graphics
+  - Subscription
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: envato:market
+    name: Envato Market API
+    description: >-
+      REST API for ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, and PhotoDune.
+      Endpoints cover catalog (search, popular, new files), item detail, item downloads (for buyers), user
+      (collections, badges, items), and author (earnings, sales). OAuth 2.0 authorization code or personal
+      token authentication.
+    humanURL: https://build.envato.com/api/
+    baseURL: https://api.envato.com
+    tags:
+      - Marketplace
+      - Items
+      - Search
+      - Downloads
+    properties:
+      - type: Documentation
+        url: https://build.envato.com/api/
+      - type: Authentication
+        url: https://build.envato.com/authentication/
+  - aid: envato:elements-affiliate
+    name: Envato Elements Affiliate API
+    description: >-
+      Affiliate-only API for Envato Elements (subscription-based stock media). Provides search and
+      metadata for catalog discovery within affiliate properties; not a general-purpose download API.
+    humanURL: https://elements.envato.com/affiliates
+    baseURL: https://elements.envato.com/api
+    tags:
+      - Elements
+      - Subscription
+      - Affiliate
+    properties:
+      - type: Documentation
+        url: https://elements.envato.com/affiliates
 common:
   - type: Website
     url: https://envato.com/
+  - type: DeveloperPortal
+    url: https://build.envato.com/
   - type: Plans
     url: plans/envato-plans-pricing.yml
   - type: RateLimits

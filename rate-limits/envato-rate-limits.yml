@@ -8,28 +8,34 @@ modified: '2026-05-08'
 reconciled: false
 tags:
 - Stock Media
-- Creative
 - Marketplace
-- Subscription
 - Themes
+- Audio
+- Video
+- Graphics
+- Subscription
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Envato. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Envato Market API enforces per-app rate limits and returns standard rate-limit headers.
+  Documentation does not publish exact RPS thresholds; bursting is throttled with HTTP 429.
+notes: Per-app limits; specific thresholds not publicly documented.
 sources:
-- https://envato.com/
+- https://build.envato.com/api/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
+- name: Per app
+  scope: application
+  metric: requests
   limit: see provider documentation
-  notes: Pending reconciliation.
+  notes: Per-app throttle; returns 429.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: On 429, apply exponential backoff with jitter.
+- name: Caching
+  description: Cache catalog responses; metadata is reasonably stable.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

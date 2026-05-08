@@ -5,37 +5,64 @@ provider: Envato
 providerId: envato
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Stock Media
-- Creative
 - Marketplace
-- Subscription
 - Themes
+- Audio
+- Video
+- Graphics
+- Subscription
 - Plans
-description: Placeholder plans/pricing artifact for Envato. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+description: >-
+  Envato Market is per-asset (buyers pay per item; authors take a revenue share). Envato Elements is a
+  subscription with unlimited downloads of covered media for active subscribers. The Market API itself
+  is free for registered apps; per-asset purchases happen on the marketplace. Elements affiliate API
+  is free for approved affiliates.
+notes: "Two product lines: Market (per-asset) and Elements (subscription). Market API is free; purchases are per-asset."
 sources:
-- https://envato.com/
+- https://build.envato.com/api/
+- https://elements.envato.com/
+- https://themeforest.net/
 plans:
-- id: envato-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: envato-market-api
+  name: Envato Market API
+  type: free
+  description: Free OAuth/personal-token API access. Buyers pay per asset on the marketplace.
   entries:
   - label: API Access
     name: api_access
     type: flat
-    metric: varies
+    metric: requests
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://envato.com/
+    price: 0
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: OAuth 2.0
+  - name: Personal tokens
+  - name: Per-asset purchases handled on marketplace
+- id: envato-elements-subscription
+  name: Envato Elements Subscription
+  type: subscription
+  description: Subscription for unlimited downloads of covered media (templates, stock photos/video, audio, fonts).
+  entries:
+  - label: Subscription
+    name: subscription
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: see https://elements.envato.com/pricing
+    userMultiplied: false
+  elements:
+  - name: Individual, Teams, Enterprise tiers
+  - name: Affiliate API available to partners
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
