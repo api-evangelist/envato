@@ -1,0 +1,29 @@
+aid: envato
+url: https://raw.githubusercontent.com/api-evangelist/envato/refs/heads/main/apis.yml
+name: Envato
+x-type: company
+description: >-
+  Envato runs Envato Elements (subscription) and Envato Market (per-purchase) platforms for creative assets — graphics, video, audio, themes, code, and templates.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Stock Media
+  - Creative
+  - Marketplace
+  - Subscription
+  - Themes
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://envato.com/
+  - type: Plans
+    url: plans/envato-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/envato-rate-limits.yml
+  - type: FinOps
+    url: finops/envato-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
