@@ -1,7 +1,7 @@
 aid: envato
 url: https://raw.githubusercontent.com/api-evangelist/envato/refs/heads/main/apis.yml
 name: Envato
-x-type: company
+kind: company
 description: >-
   Envato runs Envato Market (per-asset marketplaces like ThemeForest, CodeCanyon, AudioJungle,
   VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock
