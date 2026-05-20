@@ -54,6 +54,10 @@ apis:
       - type: Documentation
         url: https://elements.envato.com/affiliates
 common:
+  - type: GitHubOrganization
+    url: https://github.com/envato
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/envato
   - type: Website
     url: https://envato.com/
   - type: DeveloperPortal
