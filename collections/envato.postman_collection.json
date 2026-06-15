@@ -1,0 +1,1077 @@
+{
+  "item": [
+    {
+      "id": "6b3cc543-3e86-4899-a6a0-a4d87a384d03",
+      "name": "Catalog",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "beec7f93-7215-4b80-a742-4e02cc3f7f7f",
+          "name": "List popular items by site",
+          "request": {
+            "name": "List popular items by site",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "popular:json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "10408a1d-d2cb-47aa-bcd9-94449e2d2f20",
+              "name": "Popular items grouped by week, month, last quarter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "popular:json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "site",
+                      "value": "themeforest.net"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"popular\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e9dc829-d13c-4591-b7b3-e0da8c5b923e",
+          "name": "List newest files for a site and category",
+          "request": {
+            "name": "List newest files for a site and category",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "new-files:json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "50cc205f-6e29-4156-9b65-bb4b80c47f53",
+              "name": "Newest files",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "new-files:json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "site",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8e25243e-507c-4abb-ab99-a8e482dc077f",
+      "name": "Items",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4d395a62-ff82-4b9b-b447-e829b1bc4719",
+          "name": "Get item detail by ID",
+          "request": {
+            "name": "Get item detail by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "market",
+                "catalog",
+                "item"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40c50cc2-7ea6-4b45-a881-c3ca7ae7860b",
+              "name": "Item record",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "market",
+                    "catalog",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "id",
+                      "value": "<long>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 709,\n  \"name\": \"string\",\n  \"site\": \"string\",\n  \"url\": \"https://qigRyP.thuKMvIcwrJvjRqm2h4UKU-5DqK0md-N60tIETNFc1gkJfFr1dxkL\",\n  \"author_username\": \"string\",\n  \"author_url\": \"http://cpsCd.sksRxNQhWnzWqrJIr\",\n  \"author_image\": \"https://byFDuxxfqPwgS.maqiQSPDjut3NEa7.DiRvkU\",\n  \"price_cents\": 2561,\n  \"number_of_sales\": 6435,\n  \"rating\": 2290.7289856883804,\n  \"rating_count\": 1244,\n  \"published_at\": \"1963-04-28T13:29:21.977Z\",\n  \"updated_at\": \"1989-01-06T11:44:29.747Z\",\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"classification\": \"string\",\n  \"classification_url\": \"https://JbSsJLfeJ.crlwmo4tZEEyfwRH0.NDmHkex768q,CH+4QJ,tRTYWnaogxQEj\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "34d8cb79-b267-4ad7-afdc-0882c174c995",
+      "name": "Downloads",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24ac45b0-d93b-438d-8947-8947ab2c5ad6",
+          "name": "Generate a download link for a purchased item",
+          "request": {
+            "name": "Generate a download link for a purchased item",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "market",
+                "buyer",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "item_id",
+                  "value": "<long>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "purchase_code",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "852b9115-6c97-4711-b825-d13beb078b0a",
+              "name": "Download link payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "market",
+                    "buyer",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "item_id",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "purchase_code",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"download_url\": \"https://xDdhVaAeVJnhVXdzf.ofqhcS3kMuFnJ.sPPK.dLyjptyzBzLxEi.fNDML\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "443fbf3d-c238-495d-a130-47b67483e7a2",
+      "name": "User",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60ca9a91-79b9-4fdc-ad3a-30b271bd31b8",
+          "name": "List the authenticated buyer's purchases",
+          "request": {
+            "name": "List the authenticated buyer's purchases",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "market",
+                "buyer",
+                "list-purchases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_all_purchases",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d83492ef-bbbd-42b6-b433-567310bebbb3",
+              "name": "Purchases list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "market",
+                    "buyer",
+                    "list-purchases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_all_purchases",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "add6bd45-0841-484c-95ea-516e2de41d08",
+          "name": "Get the authenticated user's account info",
+          "request": {
+            "name": "Get the authenticated user's account info",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "private",
+                "user",
+                "account.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49884eee-4139-4061-9763-597df896cfb4",
+              "name": "User account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "private",
+                    "user",
+                    "account.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"image\": \"https://PMHZnFISEhQmKZuCvAJFmNTHp.poqgC8vk0bJOiSHGgw+,aaiGzSFPsEQjqM57EYaCf6dbdul3DddK.2OmX\",\n  \"firstname\": \"string\",\n  \"surname\": \"string\",\n  \"available_earnings\": \"string\",\n  \"total_deposits\": \"string\",\n  \"balance\": \"string\",\n  \"country\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbaf1912-c516-4401-bd8b-0a9b1c1fad13",
+          "name": "Get a public user profile",
+          "request": {
+            "name": "Get a public user profile",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "user:username.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a74bbe89-a345-4c8b-ae1a-1d9b69299144",
+              "name": "Public user profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "user:username.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c4d32e4-a857-4fb5-8c45-a02a191e2bfa",
+          "name": "Count items per site for a user",
+          "request": {
+            "name": "Count items per site for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "user",
+                "items-by-site:json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90d44af7-c58c-4950-b98e-cbec4cd8b339",
+              "name": "Per-site item counts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "user",
+                    "items-by-site:json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c62e2993-e513-417f-9398-d71222ff9a5e",
+      "name": "Author",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be040b1e-ccce-4fd5-aa38-e60d94161243",
+          "name": "Get the authenticated author's earnings and sales by month",
+          "request": {
+            "name": "Get the authenticated author's earnings and sales by month",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "private",
+                "user",
+                "earnings-and-sales-by-month.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf8aef74-f466-45ac-aadb-fe61bda7ae43",
+              "name": "Earnings/sales history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "private",
+                    "user",
+                    "earnings-and-sales-by-month.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19c90da7-715f-44fd-a5d9-0f2eb7a260b4",
+          "name": "Get the authenticated author's total deposits",
+          "request": {
+            "name": "Get the authenticated author's total deposits",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "private",
+                "user",
+                "total-deposits.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "028c3efc-5862-489e-9fcb-f8663ed7b263",
+              "name": "Total deposits",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "private",
+                    "user",
+                    "total-deposits.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1913b72e-d247-4d2c-9f3d-3877b7fd670d",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e5fdfd91-9ba0-4432-9a56-7b6aedeeb2be",
+          "name": "Search items in the marketplace catalog",
+          "request": {
+            "name": "Search items in the marketplace catalog",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "discovery",
+                "search",
+                "search",
+                "item"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "term",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1955c935-10ca-4c2c-b62e-f62f4661a836",
+              "name": "Paged search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "discovery",
+                    "search",
+                    "search",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "site",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.envato.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2cd141e8-e95a-47d7-aad9-22b5ddc013c3",
+    "name": "Envato Market API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Envato Build",
+      "type": "text/plain"
+    }
+  }
+}

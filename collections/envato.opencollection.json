@@ -1,0 +1,276 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Envato Market API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List popular items by site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/popular:json",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List popular items by site"
+        },
+        {
+          "info": {
+            "name": "List newest files for a site and category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/new-files:json",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List newest files for a site and category"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get item detail by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v3/market/catalog/item",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get item detail by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search items in the marketplace catalog",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/discovery/search/search/item",
+            "params": [
+              {
+                "name": "term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort_by",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search items in the marketplace catalog"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Downloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate a download link for a purchased item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v3/market/buyer/download",
+            "params": [
+              {
+                "name": "item_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchase_code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Generate a download link for a purchased item"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List the authenticated buyer's purchases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v3/market/buyer/list-purchases",
+            "params": [
+              {
+                "name": "include_all_purchases",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List the authenticated buyer's purchases"
+        },
+        {
+          "info": {
+            "name": "Get the authenticated user's account info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/private/user/account.json"
+          },
+          "docs": "Get the authenticated user's account info"
+        },
+        {
+          "info": {
+            "name": "Get a public user profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/user:username.json",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a public user profile"
+        },
+        {
+          "info": {
+            "name": "Count items per site for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/user/items-by-site:json",
+            "params": [
+              {
+                "name": "username",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Count items per site for a user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Author",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the authenticated author's earnings and sales by month",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/private/user/earnings-and-sales-by-month.json"
+          },
+          "docs": "Get the authenticated author's earnings and sales by month"
+        },
+        {
+          "info": {
+            "name": "Get the authenticated author's total deposits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/private/user/total-deposits.json"
+          },
+          "docs": "Get the authenticated author's total deposits"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
