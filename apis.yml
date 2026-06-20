@@ -7,7 +7,7 @@ description: >-
   VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock
   media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and
   earnings; Elements has a separate affiliate API.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Stock Media
   - Marketplace
