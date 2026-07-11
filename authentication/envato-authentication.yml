@@ -1,0 +1,27 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/envato-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: Personal Token
+  description: 'Envato personal token issued from build.envato.com. Sent as `Authorization:
+    Bearer <token>`.'
+  sources:
+  - openapi/envato-openapi.yml
+- name: oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.envato.com/authorization
+    tokenUrl: https://api.envato.com/token
+    scopes: 1
+  sources:
+  - openapi/envato-openapi.yml

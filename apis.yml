@@ -54,6 +54,12 @@ apis:
       - type: Documentation
         url: https://elements.envato.com/affiliates
 common:
+  - type: VulnerabilityDisclosure
+    url: security/envato-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/envato-domain-security.yml
+  - type: Authentication
+    url: authentication/envato-authentication.yml
   - type: OAuthScopes
     url: scopes/envato-scopes.yml
   - type: GitHubOrganization
