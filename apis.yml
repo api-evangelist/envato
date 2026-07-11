@@ -54,6 +54,8 @@ apis:
       - type: Documentation
         url: https://elements.envato.com/affiliates
 common:
+  - type: OAuthScopes
+    url: scopes/envato-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/envato
   - type: LinkedIn
@@ -68,6 +70,8 @@ common:
     url: rate-limits/envato-rate-limits.yml
   - type: FinOps
     url: finops/envato-finops.yml
+  - url: https://envato.com/blog/rss.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

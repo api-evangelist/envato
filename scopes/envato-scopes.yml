@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/envato-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/envato-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.envato.com/authorization
+    tokenUrl: https://api.envato.com/token
+scopes:
+- scope: default
+  description: Default Envato Market scope set
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/envato-openapi.yml
