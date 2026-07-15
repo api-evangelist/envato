@@ -54,6 +54,8 @@ apis:
       - type: Documentation
         url: https://elements.envato.com/affiliates
 common:
+  - type: AgenticAccess
+    url: agentic-access/envato-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/envato-vulnerability-disclosure.yml
   - type: DomainSecurity
