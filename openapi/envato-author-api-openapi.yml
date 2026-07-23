@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Envato Market Author API
+  version: 3.0.0
+  description: Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.
+  contact:
+    name: Envato Build
+    url: https://build.envato.com/api/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.envato.com
+  description: Envato API production base URL
+security:
+- bearerAuth: []
+- oauth2:
+  - default
+tags:
+- name: Author
+paths:
+  /v1/market/private/user/earnings-and-sales-by-month.json:
+    get:
+      tags:
+      - Author
+      summary: Get the authenticated author's earnings and sales by month
+      operationId: getEarningsAndSalesByMonth
+      responses:
+        '200':
+          description: Earnings/sales history
+  /v1/market/private/user/total-deposits.json:
+    get:
+      tags:
+      - Author
+      summary: Get the authenticated author's total deposits
+      operationId: getTotalDeposits
+      responses:
+        '200':
+          description: Total deposits
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Personal Token
+      description: 'Envato personal token issued from build.envato.com. Sent as `Authorization: Bearer <token>`.'
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.envato.com/authorization
+          tokenUrl: https://api.envato.com/token
+          scopes:
+            default: Default Envato Market scope set

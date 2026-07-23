@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: Envato Market Author Items API
+  version: 3.0.0
+  description: Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.
+  contact:
+    name: Envato Build
+    url: https://build.envato.com/api/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.envato.com
+  description: Envato API production base URL
+security:
+- bearerAuth: []
+- oauth2:
+  - default
+tags:
+- name: Items
+paths:
+  /v3/market/catalog/item:
+    get:
+      tags:
+      - Items
+      summary: Get item detail by ID
+      operationId: getItemById
+      parameters:
+      - in: query
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: Item record
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+components:
+  schemas:
+    Item:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        site:
+          type: string
+        url:
+          type: string
+          format: uri
+        author_username:
+          type: string
+        author_url:
+          type: string
+          format: uri
+        author_image:
+          type: string
+          format: uri
+        price_cents:
+          type: integer
+        number_of_sales:
+          type: integer
+        rating:
+          type: number
+        rating_count:
+          type: integer
+        published_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time
+        tags:
+          type: array
+          items:
+            type: string
+        classification:
+          type: string
+        classification_url:
+          type: string
+          format: uri
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Personal Token
+      description: 'Envato personal token issued from build.envato.com. Sent as `Authorization: Bearer <token>`.'
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.envato.com/authorization
+          tokenUrl: https://api.envato.com/token
+          scopes:
+            default: Default Envato Market scope set

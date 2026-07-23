@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Envato Market Author User API
+  version: 3.0.0
+  description: Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.
+  contact:
+    name: Envato Build
+    url: https://build.envato.com/api/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.envato.com
+  description: Envato API production base URL
+security:
+- bearerAuth: []
+- oauth2:
+  - default
+tags:
+- name: User
+paths:
+  /v3/market/buyer/list-purchases:
+    get:
+      tags:
+      - User
+      summary: List the authenticated buyer's purchases
+      operationId: listPurchases
+      parameters:
+      - in: query
+        name: include_all_purchases
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Purchases list
+  /v1/market/private/user/account.json:
+    get:
+      tags:
+      - User
+      summary: Get the authenticated user's account info
+      operationId: getUserAccount
+      responses:
+        '200':
+          description: User account
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserAccount'
+  /v1/market/user:username.json:
+    get:
+      tags:
+      - User
+      summary: Get a public user profile
+      operationId: getUserProfile
+      parameters:
+      - in: query
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Public user profile
+  /v1/market/user/items-by-site:json:
+    get:
+      tags:
+      - User
+      summary: Count items per site for a user
+      operationId: getUserItemsBySite
+      parameters:
+      - in: query
+        name: username
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Per-site item counts
+components:
+  schemas:
+    UserAccount:
+      type: object
+      properties:
+        image:
+          type: string
+          format: uri
+        firstname:
+          type: string
+        surname:
+          type: string
+        available_earnings:
+          type: string
+        total_deposits:
+          type: string
+        balance:
+          type: string
+        country:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Personal Token
+      description: 'Envato personal token issued from build.envato.com. Sent as `Authorization: Bearer <token>`.'
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.envato.com/authorization
+          tokenUrl: https://api.envato.com/token
+          scopes:
+            default: Default Envato Market scope set

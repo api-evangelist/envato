@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Envato Market Author Search API
+  version: 3.0.0
+  description: Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.
+  contact:
+    name: Envato Build
+    url: https://build.envato.com/api/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.envato.com
+  description: Envato API production base URL
+security:
+- bearerAuth: []
+- oauth2:
+  - default
+tags:
+- name: Search
+paths:
+  /v1/discovery/search/search/item:
+    get:
+      tags:
+      - Search
+      summary: Search items in the marketplace catalog
+      operationId: searchItems
+      parameters:
+      - in: query
+        name: term
+        schema:
+          type: string
+      - in: query
+        name: site
+        schema:
+          type: string
+      - in: query
+        name: category
+        schema:
+          type: string
+      - in: query
+        name: page
+        schema:
+          type: integer
+          default: 1
+      - in: query
+        name: page_size
+        schema:
+          type: integer
+          default: 20
+      - in: query
+        name: sort_by
+        schema:
+          type: string
+          enum:
+          - relevance
+          - rating
+          - sales
+          - price
+          - date
+          - updated
+          - category
+          - name
+          - trending
+      responses:
+        '200':
+          description: Paged search results
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Personal Token
+      description: 'Envato personal token issued from build.envato.com. Sent as `Authorization: Bearer <token>`.'
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.envato.com/authorization
+          tokenUrl: https://api.envato.com/token
+          scopes:
+            default: Default Envato Market scope set

@@ -1,0 +1,63 @@
+openapi: 3.1.0
+info:
+  title: Envato Market Author Downloads API
+  version: 3.0.0
+  description: Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.
+  contact:
+    name: Envato Build
+    url: https://build.envato.com/api/
+  license:
+    name: Proprietary
+servers:
+- url: https://api.envato.com
+  description: Envato API production base URL
+security:
+- bearerAuth: []
+- oauth2:
+  - default
+tags:
+- name: Downloads
+paths:
+  /v3/market/buyer/download:
+    get:
+      tags:
+      - Downloads
+      summary: Generate a download link for a purchased item
+      operationId: getBuyerDownload
+      parameters:
+      - in: query
+        name: item_id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - in: query
+        name: purchase_code
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Download link payload
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  download_url:
+                    type: string
+                    format: uri
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Personal Token
+      description: 'Envato personal token issued from build.envato.com. Sent as `Authorization: Bearer <token>`.'
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.envato.com/authorization
+          tokenUrl: https://api.envato.com/token
+          scopes:
+            default: Default Envato Market scope set
