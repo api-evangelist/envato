@@ -7,7 +7,20 @@ description: >-
   VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock
   media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and
   earnings; Elements has a separate affiliate API.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/envato.png
 tags:
   - Stock Media
   - Marketplace
@@ -20,39 +33,99 @@ created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-  - aid: envato:market
-    name: Envato Market API
-    description: >-
-      REST API for ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, and PhotoDune.
-      Endpoints cover catalog (search, popular, new files), item detail, item downloads (for buyers), user
-      (collections, badges, items), and author (earnings, sales). OAuth 2.0 authorization code or personal
-      token authentication.
-    humanURL: https://build.envato.com/api/
-    baseURL: https://api.envato.com
-    tags:
-      - Marketplace
-      - Items
-      - Search
-      - Downloads
-    properties:
-      - type: Documentation
-        url: https://build.envato.com/api/
-      - type: Authentication
-        url: https://build.envato.com/authentication/
-  - aid: envato:elements-affiliate
-    name: Envato Elements Affiliate API
-    description: >-
-      Affiliate-only API for Envato Elements (subscription-based stock media). Provides search and
-      metadata for catalog discovery within affiliate properties; not a general-purpose download API.
-    humanURL: https://elements.envato.com/affiliates
-    baseURL: https://elements.envato.com/api
-    tags:
-      - Elements
-      - Subscription
-      - Affiliate
-    properties:
-      - type: Documentation
-        url: https://elements.envato.com/affiliates
+- aid: envato:market
+  name: Envato Market API
+  description: >-
+    REST API for ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, and PhotoDune.
+    Endpoints cover catalog (search, popular, new files), item detail, item downloads (for buyers), user
+    (collections, badges, items), and author (earnings, sales). OAuth 2.0 authorization code or personal
+    token authentication.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Marketplace
+  - Items
+  - Search
+  - Downloads
+  properties:
+  - type: Documentation
+    url: https://build.envato.com/api/
+  - type: Authentication
+    url: https://build.envato.com/authentication/
+- aid: envato:elements-affiliate
+  name: Envato Elements Affiliate API
+  description: >-
+    Affiliate-only API for Envato Elements (subscription-based stock media). Provides search and metadata
+    for catalog discovery within affiliate properties; not a general-purpose download API.
+  humanURL: https://elements.envato.com/affiliates
+  baseURL: https://elements.envato.com/api
+  tags:
+  - Elements
+  - Subscription
+  - Affiliate
+  properties:
+  - type: Documentation
+    url: https://elements.envato.com/affiliates
+- aid: envato:envato-author-api
+  name: Envato Author API
+  description: The Author API from Envato — 2 operation(s) for author.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Author
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-author-api-openapi.yml
+- aid: envato:envato-catalog-api
+  name: Envato Catalog API
+  description: The Catalog API from Envato — 2 operation(s) for catalog.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-catalog-api-openapi.yml
+- aid: envato:envato-downloads-api
+  name: Envato Downloads API
+  description: The Downloads API from Envato — 1 operation(s) for downloads.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Downloads
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-downloads-api-openapi.yml
+- aid: envato:envato-items-api
+  name: Envato Items API
+  description: The Items API from Envato — 1 operation(s) for items.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-items-api-openapi.yml
+- aid: envato:envato-search-api
+  name: Envato Search API
+  description: The Search API from Envato — 1 operation(s) for search.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-search-api-openapi.yml
+- aid: envato:envato-user-api
+  name: Envato User API
+  description: The User API from Envato — 4 operation(s) for user.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-user-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/envato-agentic-access.yml
