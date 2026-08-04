@@ -1,0 +1,24 @@
+{
+  "provider": "envato",
+  "sources": [
+    "envato-author-api-openapi.yml",
+    "envato-catalog-api-openapi.yml",
+    "envato-downloads-api-openapi.yml",
+    "envato-items-api-openapi.yml",
+    "envato-search-api-openapi.yml",
+    "envato-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "envato-author-api-openapi.yml",
+    "envato-catalog-api-openapi.yml",
+    "envato-downloads-api-openapi.yml",
+    "envato-items-api-openapi.yml",
+    "envato-search-api-openapi.yml",
+    "envato-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
