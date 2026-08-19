@@ -1,0 +1,187 @@
+{
+  "item": [
+    {
+      "id": "c2005305-a90e-43e4-9760-9a801f56249e",
+      "name": "Author",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bfd854ba-2808-4fa0-958b-f2cabcd8c629",
+          "name": "Get the authenticated author's earnings and sales by month",
+          "request": {
+            "name": "Get the authenticated author's earnings and sales by month",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "private",
+                "user",
+                "earnings-and-sales-by-month.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4813e10a-8058-467c-9622-d60ae124be16",
+              "name": "Earnings/sales history",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "private",
+                    "user",
+                    "earnings-and-sales-by-month.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31a6fb2f-aaa5-4115-a0ed-b522bbacd262",
+          "name": "Get the authenticated author's total deposits",
+          "request": {
+            "name": "Get the authenticated author's total deposits",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "private",
+                "user",
+                "total-deposits.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c44fd046-7a63-495d-8e4d-4446ed42987f",
+              "name": "Total deposits",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "private",
+                    "user",
+                    "total-deposits.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.envato.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4b0f7023-1965-4bd5-adcc-acb304072bb6",
+    "name": "Envato Market Author API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Envato Build",
+      "type": "text/plain"
+    }
+  }
+}

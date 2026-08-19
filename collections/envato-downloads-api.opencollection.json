@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Envato Market Author Downloads API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Downloads",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate a download link for a purchased item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v3/market/buyer/download",
+            "params": [
+              {
+                "name": "item_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "purchase_code",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Generate a download link for a purchased item"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

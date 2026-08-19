@@ -1,0 +1,223 @@
+{
+  "item": [
+    {
+      "id": "b8a5e47a-3170-41d2-8330-bdc2d74605cf",
+      "name": "Catalog",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c8ae5ebf-0a3b-4a9b-9e1d-9424256ff4bc",
+          "name": "List popular items by site",
+          "request": {
+            "name": "List popular items by site",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "popular:json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "184ad5ba-f840-4f03-9573-a43325af3f0b",
+              "name": "Popular items grouped by week, month, last quarter",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "popular:json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "site",
+                      "value": "themeforest.net"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"popular\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c403ff5d-e6d3-4a29-a36f-449b491d3b88",
+          "name": "List newest files for a site and category",
+          "request": {
+            "name": "List newest files for a site and category",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "new-files:json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "270c2ca3-b947-40e8-94c4-b8af2a724aa3",
+              "name": "Newest files",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "new-files:json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "site",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.envato.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a5b34fa7-0bef-45a2-b623-3d40dff1f954",
+    "name": "Envato Market Author Catalog API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Envato Build",
+      "type": "text/plain"
+    }
+  }
+}

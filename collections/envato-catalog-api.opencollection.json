@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Envato Market Author Catalog API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List popular items by site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/popular:json",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List popular items by site"
+        },
+        {
+          "info": {
+            "name": "List newest files for a site and category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/new-files:json",
+            "params": [
+              {
+                "name": "site",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List newest files for a site and category"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

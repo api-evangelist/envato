@@ -1,0 +1,370 @@
+{
+  "item": [
+    {
+      "id": "2c4b35a0-c5af-4f2e-a61a-1ab96077d517",
+      "name": "User",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7d2dff14-b64c-4b59-99ff-894f624163e7",
+          "name": "List the authenticated buyer's purchases",
+          "request": {
+            "name": "List the authenticated buyer's purchases",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "market",
+                "buyer",
+                "list-purchases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "include_all_purchases",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bdc9b863-a21a-4985-94fb-524750829202",
+              "name": "Purchases list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "market",
+                    "buyer",
+                    "list-purchases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "include_all_purchases",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1428b64a-dff5-4805-8c17-165e2506388a",
+          "name": "Get the authenticated user's account info",
+          "request": {
+            "name": "Get the authenticated user's account info",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "private",
+                "user",
+                "account.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b8994c55-582e-47c4-8dae-d9c85e5f729d",
+              "name": "User account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "private",
+                    "user",
+                    "account.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"image\": \"https://dmiSJLPSWSnjUxJVhxfSaVqasCME.irraA.taBghHspjkAk3Vywmct+k2xPMN\",\n  \"firstname\": \"string\",\n  \"surname\": \"string\",\n  \"available_earnings\": \"string\",\n  \"total_deposits\": \"string\",\n  \"balance\": \"string\",\n  \"country\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc314f35-266f-4a39-afb7-1c17c39f8866",
+          "name": "Get a public user profile",
+          "request": {
+            "name": "Get a public user profile",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "user:username.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6275961-9c5f-4341-9e14-3a7057b588e6",
+              "name": "Public user profile",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "user:username.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "84268eab-cc06-461a-a0f2-06a817a34c5a",
+          "name": "Count items per site for a user",
+          "request": {
+            "name": "Count items per site for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "market",
+                "user",
+                "items-by-site:json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7deebc49-40c6-4273-8055-6cf092ddb65f",
+              "name": "Per-site item counts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "market",
+                    "user",
+                    "items-by-site:json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "username",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.envato.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7b282f44-2666-4819-8ba3-740052f8f4a0",
+    "name": "Envato Market Author User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Envato Build",
+      "type": "text/plain"
+    }
+  }
+}

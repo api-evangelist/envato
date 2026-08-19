@@ -1,0 +1,170 @@
+{
+  "item": [
+    {
+      "id": "693583da-392a-4fd6-84af-d8675e70746b",
+      "name": "Search",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a544fc61-5fed-4d94-9a0b-847ac284aabe",
+          "name": "Search items in the marketplace catalog",
+          "request": {
+            "name": "Search items in the marketplace catalog",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "discovery",
+                "search",
+                "search",
+                "item"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "term",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "site",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "20"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort_by",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c26a159c-611b-4a20-bed7-5940add39d38",
+              "name": "Paged search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "discovery",
+                    "search",
+                    "search",
+                    "item"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "term",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "site",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "20"
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.envato.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a1f4e1ea-cd40-4081-af22-69c604aa85b9",
+    "name": "Envato Market Author Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.\n\nContact Support:\n Name: Envato Build",
+      "type": "text/plain"
+    }
+  }
+}

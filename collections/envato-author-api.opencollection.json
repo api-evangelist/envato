@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Envato Market Author API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Author",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the authenticated author's earnings and sales by month",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/private/user/earnings-and-sales-by-month.json"
+          },
+          "docs": "Get the authenticated author's earnings and sales by month"
+        },
+        {
+          "info": {
+            "name": "Get the authenticated author's total deposits",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v1/market/private/user/total-deposits.json"
+          },
+          "docs": "Get the authenticated author's total deposits"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

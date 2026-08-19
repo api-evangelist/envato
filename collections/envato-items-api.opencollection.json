@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Envato Market Author Items API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Items",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get item detail by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.envato.com/v3/market/catalog/item",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get item detail by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
