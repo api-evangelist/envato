@@ -44,6 +44,11 @@ apis:
   baseURL: https://api.envato.com
   tags:
   - Marketplace
+  - Item
+  - Search
+  - Downloads
+  tags_raw:
+  - Marketplace
   - Items
   - Search
   - Downloads
@@ -60,6 +65,10 @@ apis:
   humanURL: https://elements.envato.com/affiliates
   baseURL: https://elements.envato.com/api
   tags:
+  - Elements
+  - Subscription
+  - Affiliates
+  tags_raw:
   - Elements
   - Subscription
   - Affiliate
@@ -102,6 +111,8 @@ apis:
   humanURL: https://build.envato.com/api/
   baseURL: https://api.envato.com
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
