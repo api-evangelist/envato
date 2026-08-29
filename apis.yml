@@ -7,6 +7,18 @@ description: >-
   VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock
   media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and
   earnings; Elements has a separate affiliate API.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
