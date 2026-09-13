@@ -1,0 +1,49 @@
+generated: '2026-09-11'
+method: probed
+source: https://mcp.envato.com/mcp
+status: published
+server:
+  name: envato
+  transport: http
+  url: https://mcp.envato.com/mcp
+deployment:
+  mode: remote
+  endpoint: https://mcp.envato.com/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-11'
+  source: docs-check 2026-09-11 (endpoint found in the provider's own documentation, then probed)
+tools_count: 15
+tools:
+- name: search_photos
+  description: ''
+- name: search_stock_video
+  description: ''
+- name: search_music
+  description: ''
+- name: search_sound_effects
+  description: ''
+- name: search_graphics
+  description: ''
+- name: search_graphic_templates
+  description: ''
+- name: search_fonts
+  description: ''
+- name: search_presentation_templates
+  description: ''
+- name: search_video_templates
+  description: ''
+- name: search_web_templates
+  description: ''
+- name: search_3d
+  description: ''
+- name: search_add_ons
+  description: ''
+- name: search_wordpress
+  description: ''
+- name: search_cms_templates
+  description: ''
+- name: search_items
+  description: ''
+tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
+authorship: provider
