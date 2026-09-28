@@ -16,34 +16,53 @@ deployment:
 tools_count: 15
 tools:
 - name: search_photos
-  description: ''
+  description: Search the Elements catalog for photos items. Supports keyword search, pagination, sorting,
+    and photos-specific typed refinement filters (enum-constrained per field).
 - name: search_stock_video
-  description: ''
+  description: Search the Elements catalog for stock-video items. Supports keyword search, pagination,
+    sorting, and stock-video-specific typed refinement filters (enum-constrained per field).
 - name: search_music
-  description: ''
+  description: Search the Elements catalog for music items. Supports keyword search, pagination, sorting,
+    and music-specific typed refinement filters (enum-constrained per field).
 - name: search_sound_effects
-  description: ''
+  description: Search the Elements catalog for sound-effects items. Supports keyword search, pagination,
+    sorting, and sound-effects-specific typed refinement filters (enum-constrained per field).
 - name: search_graphics
-  description: ''
+  description: Search the Elements catalog for graphics items. Supports keyword search, pagination, sorting,
+    and graphics-specific typed refinement filters (enum-constrained per field).
 - name: search_graphic_templates
-  description: ''
+  description: Search the Elements catalog for graphic-templates items. Supports keyword search, pagination,
+    sorting, and graphic-templates-specific typed refinement filters (enum-constrained per field).
 - name: search_fonts
-  description: ''
+  description: Search the Elements catalog for fonts items. Supports keyword search, pagination, sorting,
+    and fonts-specific typed refinement filters (enum-constrained per field).
 - name: search_presentation_templates
-  description: ''
+  description: Search the Elements catalog for presentation-templates items. Supports keyword search,
+    pagination, sorting, and presentation-templates-specific typed refinement filters (enum-constrained
+    per field).
 - name: search_video_templates
-  description: ''
+  description: Search the Elements catalog for video-templates items. Supports keyword search, pagination,
+    sorting, and video-templates-specific typed refinement filters (enum-constrained per field).
 - name: search_web_templates
-  description: ''
+  description: Search the Elements catalog for web-templates items. Supports keyword search, pagination,
+    sorting, and web-templates-specific typed refinement filters (enum-constrained per field).
 - name: search_3d
-  description: ''
+  description: Search the Elements catalog for 3d items. Supports keyword search, pagination, sorting,
+    and 3d-specific typed refinement filters (enum-constrained per field).
 - name: search_add_ons
-  description: ''
+  description: Search the Elements catalog for add-ons items. Supports keyword search, pagination, sorting,
+    and add-ons-specific typed refinement filters (enum-constrained per field).
 - name: search_wordpress
-  description: ''
+  description: Search the Elements catalog for wordpress items. Supports keyword search, pagination, sorting,
+    and wordpress-specific typed refinement filters (enum-constrained per field).
 - name: search_cms_templates
-  description: ''
+  description: Search the Elements catalog for cms-templates items. Supports keyword search, pagination,
+    sorting, and cms-templates-specific typed refinement filters (enum-constrained per field).
 - name: search_items
-  description: ''
+  description: DEPRECATED — use search_<itemType> instead.  Legacy monolithic search across all 14 Elements
+    item types. Still fully functional, but prefer the per-item-type tools (search_photos, search_music,
+    search_3d, …) whose typed filter fields are en
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
