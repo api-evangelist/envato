@@ -1,0 +1,2600 @@
+{
+  "endpoint": "https://mcp.envato.com/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "SEO MCP Server",
+    "version": "3.4.7"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "search_photos",
+        "description": "Search the Elements catalog for photos items. Supports keyword search, pagination, sorting, and photos-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "orientation": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "landscape",
+                            "portrait",
+                            "square"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Visual orientation of the content"
+                    },
+                    "number_of_people": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "No people",
+                            "1 person",
+                            "2 people",
+                            "3+ people"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Number of people visible in the photo"
+                    },
+                    "colors": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "pink",
+                            "red",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "teal",
+                            "blue",
+                            "purple",
+                            "brown",
+                            "black",
+                            "grey",
+                            "white"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Dominant color"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/352eae9712bb/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_stock_video",
+        "description": "Search the Elements catalog for stock-video items. Supports keyword search, pagination, sorting, and stock-video-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "orientation": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "horizontal",
+                            "vertical"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Visual orientation of the content"
+                    },
+                    "resolution": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "720p (HD)",
+                            "1080p (Full HD)",
+                            "2K",
+                            "4K (UHD)"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Video resolution quality"
+                    },
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Stock Footage",
+                            "Motion Graphics"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Top-level content category"
+                    },
+                    "subcategories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Buildings",
+                            "Business, Corporate",
+                            "Cartoons",
+                            "City",
+                            "Construction",
+                            "Education",
+                            "Food",
+                            "Holidays",
+                            "Industrial",
+                            "Kids",
+                            "Lifestyle",
+                            "Medical",
+                            "Military",
+                            "Nature",
+                            "Overhead",
+                            "People",
+                            "Religious",
+                            "Science",
+                            "Slow Motion",
+                            "Special Events",
+                            "Sports",
+                            "Stop Motion",
+                            "Technology",
+                            "Time Lapse",
+                            "Vehicles",
+                            "Weather"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "enum": [
+                            "Backgrounds",
+                            "Bugs",
+                            "Distortions",
+                            "Elements",
+                            "Infographics",
+                            "Interface Effects",
+                            "Lower Thirds",
+                            "Miscellaneous",
+                            "Overlays",
+                            "Particles",
+                            "Revealer",
+                            "Transitions",
+                            "Water & Fluid"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Content subcategory — must match the selected category. Stock Footage: Buildings, Business, Corporate, Cartoons, City, Construction, Education, Food, Holidays, Industrial, Kids, Lifestyle, Medical, Military, Nature, Overhead, People, Religious, Science, Slow Motion, Special Events, Sports, Stop Motion, Technology, Time Lapse, Vehicles, Weather. Motion Graphics: Backgrounds, Bugs, Distortions, Elements, Infographics, Interface Effects, Lower Thirds, Miscellaneous, Overlays, Particles, Revealer, Transitions, Water & Fluid."
+                    },
+                    "frame_rate": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "23.98 fps",
+                            "24 fps",
+                            "25 fps",
+                            "29.97 fps",
+                            "30 fps",
+                            "50 fps",
+                            "60 fps",
+                            "More than 60 fps"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Video frame rate"
+                    },
+                    "min_media_length": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip duration in seconds (0–3600)"
+                    },
+                    "max_media_length": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip duration in seconds (0–3600)"
+                    },
+                    "has_alpha_channel": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip includes a transparency alpha channel"
+                    },
+                    "is_looped": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip loops seamlessly"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/9146e387b375/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_music",
+        "description": "Search the Elements catalog for music items. Supports keyword search, pagination, sorting, and music-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "tempo": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Very Slow (Below 60 BPM)",
+                            "Slow (60-90 BPM)",
+                            "Medium (90-110 BPM)",
+                            "Upbeat (110-140 BPM)",
+                            "Fast (140-160 BPM)",
+                            "Very Fast (160+ BPM)"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Music tempo or speed"
+                    },
+                    "mood": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "happy",
+                            "sad",
+                            "inspiring",
+                            "dramatic",
+                            "dark",
+                            "upbeat",
+                            "chill",
+                            "funny",
+                            "angry",
+                            "relaxing",
+                            "romantic",
+                            "epic"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Emotional mood of the music"
+                    },
+                    "instrument": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "piano",
+                            "acoustic guitar",
+                            "drums",
+                            "strings",
+                            "brass",
+                            "synth",
+                            "violin",
+                            "electric guitar",
+                            "accordion",
+                            "flute",
+                            "banjo",
+                            "bass",
+                            "bells",
+                            "cello",
+                            "clarinet",
+                            "double bass",
+                            "harmonica",
+                            "harp",
+                            "keyboard",
+                            "mallets",
+                            "organ",
+                            "percussion",
+                            "plucked",
+                            "saxophone",
+                            "sound effects",
+                            "trumpet",
+                            "ukulele",
+                            "woodwinds"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Primary musical instrument"
+                    },
+                    "genre": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "pop",
+                            "rock",
+                            "electronic",
+                            "classical",
+                            "jazz",
+                            "hip hop",
+                            "country",
+                            "ambient",
+                            "blues",
+                            "children",
+                            "chiptune",
+                            "cinematic",
+                            "corporate",
+                            "dance",
+                            "dubstep",
+                            "folk",
+                            "funk",
+                            "future bass",
+                            "house",
+                            "indie",
+                            "latin",
+                            "lofi",
+                            "lounge",
+                            "metal",
+                            "orchestral hybrid",
+                            "percussive",
+                            "rnb soul",
+                            "reggae",
+                            "techno",
+                            "trap",
+                            "world"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Music genre or style"
+                    },
+                    "theme": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "action",
+                            "corporate",
+                            "celebration",
+                            "comedy",
+                            "documentary",
+                            "drama",
+                            "family",
+                            "lifestyle",
+                            "nature",
+                            "romance",
+                            "sci-fi",
+                            "showbiz",
+                            "sports",
+                            "technology",
+                            "travel"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Thematic context of the music"
+                    },
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Music Tracks",
+                            "Logos & Idents"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Music catalogue category"
+                    },
+                    "min_media_length": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Track duration in seconds (0–3600)"
+                    },
+                    "max_media_length": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Track duration in seconds (0–3600)"
+                    },
+                    "decade": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "2000s",
+                            "80s & 90s",
+                            "60s & 70s",
+                            "50s and earlier"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Era the music represents"
+                    },
+                    "vocals_in_audio": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "No Vocals",
+                            "Background Vocals",
+                            "Vocal Samples",
+                            "Instrumental Included",
+                            "Lead Vocals",
+                            "Male Vocals",
+                            "Female Vocals"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Type of vocal content present"
+                    },
+                    "is_looped": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Track loops seamlessly"
+                    },
+                    "claim_clear": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Track is YouTube Content ID claim-free"
+                    },
+                    "exclude_pro_affiliated": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Exclude tracks affiliated with a Performing Rights Organisation"
+                    },
+                    "has_music_stems": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Stems available for individual track components"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/4408de1bd57d/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_sound_effects",
+        "description": "Search the Elements catalog for sound-effects items. Supports keyword search, pagination, sorting, and sound-effects-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Game Sounds",
+                            "Transitions & Movement",
+                            "Domestic Sounds",
+                            "Human Sounds",
+                            "Urban Sounds",
+                            "Nature Sounds",
+                            "Futuristic Sounds",
+                            "Interface Sounds",
+                            "Cartoon Sounds",
+                            "Industrial Sounds",
+                            "Sound Packs"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Sound effect category"
+                    },
+                    "min_media_length": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip duration in seconds (0–540)"
+                    },
+                    "max_media_length": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip duration in seconds (0–540)"
+                    },
+                    "is_looped": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Clip loops seamlessly"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/472118badbbd/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_graphics",
+        "description": "Search the Elements catalog for graphics items. Supports keyword search, pagination, sorting, and graphics-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "graphics_file_types": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "JPG",
+                            "PNG",
+                            "JSON"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "File format for graphic files"
+                    },
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Backgrounds",
+                            "Textures",
+                            "Patterns",
+                            "Icons",
+                            "Objects",
+                            "Illustrations"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Graphic content category"
+                    },
+                    "graphics_applications_supported": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Adobe Photoshop",
+                            "Adobe Illustrator",
+                            "Figma",
+                            "Sketch",
+                            "Affinity"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Design application the asset is compatible with"
+                    },
+                    "is_vector": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset is vector-based"
+                    },
+                    "is_layered": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset includes editable layers"
+                    },
+                    "is_tileable": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset tiles seamlessly"
+                    },
+                    "is_animated": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset includes animation"
+                    },
+                    "is_looped": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Animation loops seamlessly"
+                    },
+                    "part_of_pack": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset is part of a multi-item pack"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/07d228130119/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_graphic_templates",
+        "description": "Search the Elements catalog for graphic-templates items. Supports keyword search, pagination, sorting, and graphic-templates-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Print Templates",
+                            "Product Mockups",
+                            "Websites",
+                            "UX and UI Kits",
+                            "Infographics",
+                            "Logos",
+                            "Scene Generators",
+                            "Social Media"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Graphic template category"
+                    },
+                    "graphic_templates_applications_supported": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Adobe Photoshop",
+                            "Adobe Illustrator",
+                            "Adobe InDesign",
+                            "Adobe XD",
+                            "Figma",
+                            "Sketch",
+                            "Canva",
+                            "Microsoft Word"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Design application the template targets"
+                    },
+                    "color_space": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "RGB",
+                            "CMYK"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Color space of the template"
+                    },
+                    "orientation": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "landscape",
+                            "portrait",
+                            "square"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Visual orientation of the template"
+                    },
+                    "is_vector": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template is vector-based"
+                    },
+                    "is_layered": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template includes editable layers"
+                    },
+                    "colors": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "pink",
+                            "red",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "teal",
+                            "blue",
+                            "purple",
+                            "brown",
+                            "black",
+                            "grey",
+                            "white",
+                            "gold",
+                            "silver"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Logo color (logo category only)"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/edd7c7cf9032/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_fonts",
+        "description": "Search the Elements catalog for fonts items. Supports keyword search, pagination, sorting, and fonts-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "serif",
+                            "sans_serif",
+                            "script",
+                            "decorative_display",
+                            "monospace",
+                            "handwritten_brush",
+                            "blackletter",
+                            "symbols",
+                            "duo"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Font style classification"
+                    },
+                    "spacing": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Normal",
+                            "Monospace",
+                            "Condensed",
+                            "Expanded"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Character spacing style"
+                    },
+                    "optimum_size": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Large (Display / Poster)",
+                            "Small (Book / Magazine)",
+                            "Condensed",
+                            "Any Size"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Recommended use-case size"
+                    },
+                    "is_webfont": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Font is licensed and optimised for web use"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/230aad27ff4a/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_presentation_templates",
+        "description": "Search the Elements catalog for presentation-templates items. Supports keyword search, pagination, sorting, and presentation-templates-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "presentation_templates_applications_supported": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Keynote",
+                            "PowerPoint",
+                            "Google Slides"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Presentation application the template targets"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/8121ccbdfd30/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_video_templates",
+        "description": "Search the Elements catalog for video-templates items. Supports keyword search, pagination, sorting, and video-templates-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Broadcast Packages",
+                            "Elements",
+                            "Infographics",
+                            "Logo Stings",
+                            "LUTs",
+                            "Openers",
+                            "Product Promo",
+                            "Titles",
+                            "Video Displays"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Video template category"
+                    },
+                    "applications_supported": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "After Effects",
+                            "Premiere Pro",
+                            "Apple Motion",
+                            "Final Cut Pro",
+                            "DaVinci Resolve"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Video application the template targets"
+                    },
+                    "resolution": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "720p (HD)",
+                            "1080p (Full HD)",
+                            "2K",
+                            "4K (UHD)"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Video resolution quality"
+                    },
+                    "required_plugins": {
+                      "anyOf": [
+                        {
+                          "const": "No Plugins required",
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Plugin dependency requirement"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/5fca04555522/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_web_templates",
+        "description": "Search the Elements catalog for web-templates items. Supports keyword search, pagination, sorting, and web-templates-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Admin Templates",
+                            "Email Templates",
+                            "Site Templates",
+                            "Landing Page Templates"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Web template category"
+                    },
+                    "email_platforms": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Campaign Monitor",
+                            "MailChimp",
+                            "SendGrid",
+                            "ExactTarget",
+                            "FreshMail",
+                            "ActiveCampaign",
+                            "MyMail",
+                            "StampReady",
+                            "iContact",
+                            "Generic"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Email service provider the template targets"
+                    },
+                    "responsive": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template is mobile-responsive"
+                    },
+                    "retina_ready": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template is optimised for high-DPI screens"
+                    },
+                    "psd_files_included": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template includes editable PSD source files"
+                    },
+                    "sketch_files_included": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template includes editable Sketch source files"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/7827860a7709/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_3d",
+        "description": "Search the Elements catalog for 3d items. Supports keyword search, pagination, sorting, and 3d-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Models",
+                            "Pixelsquid",
+                            "Templates"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "3D asset category"
+                    },
+                    "three_d_file_types": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "OBJ",
+                            "BLEND",
+                            "GLB",
+                            "FBX",
+                            "GLTF",
+                            "SPLINE"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "3D file format"
+                    },
+                    "three_d_has_animation": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset includes animation"
+                    },
+                    "three_d_rigging": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset includes a rig for animation"
+                    },
+                    "three_d_has_textures": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset includes texture maps"
+                    },
+                    "three_d_has_interaction": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset supports real-time interaction"
+                    },
+                    "three_d_themes": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Technology",
+                            "Characters",
+                            "Architecture",
+                            "Animals",
+                            "Design",
+                            "Seasons",
+                            "Nature",
+                            "Furniture",
+                            "Abstract",
+                            "Adventure",
+                            "Agriculture",
+                            "Arts",
+                            "Business",
+                            "Celebrations",
+                            "Construction",
+                            "Education",
+                            "Fashion",
+                            "Finance",
+                            "Food",
+                            "Gaming",
+                            "Health",
+                            "Kids",
+                            "Marketing",
+                            "Medical",
+                            "Military",
+                            "Places",
+                            "Retail",
+                            "Science",
+                            "Sports",
+                            "Tools and Appliances",
+                            "Transportation"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Thematic classification of the 3D asset"
+                    },
+                    "part_of_pack": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Asset is part of a multi-item pack"
+                    },
+                    "min_polycount": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Polygon count range (0–50,000,000+)"
+                    },
+                    "max_polycount": {
+                      "anyOf": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Polygon count range (0–50,000,000+)"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/b59d3bdc0d96/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_add_ons",
+        "description": "Search the Elements catalog for add-ons items. Supports keyword search, pagination, sorting, and add-ons-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Actions and Presets",
+                            "Brushes",
+                            "Layer Styles",
+                            "Palettes"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Add-on category"
+                    },
+                    "add_ons_applications_supported": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Adobe Photoshop",
+                            "Adobe Lightroom",
+                            "Adobe Illustrator",
+                            "Procreate",
+                            "Figma",
+                            "Sketch"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Design application the add-on targets"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/47185c919d4a/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_wordpress",
+        "description": "Search the Elements catalog for wordpress items. Supports keyword search, pagination, sorting, and wordpress-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Themes",
+                            "Plugins",
+                            "Template Kits"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "WordPress asset category"
+                    },
+                    "compatible_with": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Block Editor",
+                            "Bootstrap",
+                            "Buddypress",
+                            "Cart 66",
+                            "Easy Digital Downloads",
+                            "Elementor",
+                            "Elementor Pro",
+                            "Events Calendar Pro",
+                            "Facebook",
+                            "Gravity Forms",
+                            "Gutenberg",
+                            "Jigoshop",
+                            "Layers WP",
+                            "Visual Composer",
+                            "WPBakery Page Builder",
+                            "WPML",
+                            "WooCommerce",
+                            "bbPress"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "WordPress plugin or page builder compatibility"
+                    },
+                    "industries": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Automotive & Transportation",
+                            "Blogs & Podcasts",
+                            "Business & Services",
+                            "Creative & Design",
+                            "Education",
+                            "Events & Entertainment",
+                            "Fashion & Beauty",
+                            "Film & TV",
+                            "Finance & Law",
+                            "Food & Drink",
+                            "Health & Medical",
+                            "Kids & Babies",
+                            "Miscellaneous",
+                            "Music & Bands",
+                            "News & Magazines",
+                            "Non-Profit & Religion",
+                            "Personal & CV",
+                            "Photography",
+                            "Real Estate & Construction",
+                            "Shopping & eCommerce",
+                            "Sport & Fitness",
+                            "Technology & Apps",
+                            "Travel & Accommodation",
+                            "Weddings"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Target industry or niche"
+                    },
+                    "responsive": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Theme is mobile-responsive"
+                    },
+                    "retina_ready": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Theme is optimised for high-DPI screens"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/b62059293635/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_cms_templates",
+        "description": "Search the Elements catalog for cms-templates items. Supports keyword search, pagination, sorting, and cms-templates-specific typed refinement filters (enum-constrained per field).",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "categories": {
+                      "anyOf": [
+                        {
+                          "enum": [
+                            "Drupal",
+                            "Joomla",
+                            "Magento",
+                            "OpenCart",
+                            "PrestaShop",
+                            "Shopify",
+                            "Unbounce",
+                            "Ghost",
+                            "Tumblr"
+                          ],
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "CMS platform"
+                    },
+                    "ecommerce_ready": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template supports eCommerce functionality"
+                    },
+                    "responsive": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template is mobile-responsive"
+                    },
+                    "retina_ready": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template is optimised for high-DPI screens"
+                    },
+                    "psd_files_included": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template includes editable PSD source files"
+                    },
+                    "sketch_files_included": {
+                      "anyOf": [
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ],
+                      "default": null,
+                      "description": "Template includes editable Sketch source files"
+                    }
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null
+            }
+          },
+          "required": [
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/1cca3e30ddf9/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "search_items",
+        "description": "DEPRECATED — use search_<itemType> instead.\n\nLegacy monolithic search across all 14 Elements item types. Still fully\nfunctional, but prefer the per-item-type tools (search_photos, search_music,\nsearch_3d, …) whose typed filter fields are enum-constrained per item type.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "itemType": {
+              "enum": [
+                "photos",
+                "stock-video",
+                "music",
+                "sound-effects",
+                "graphics",
+                "graphic-templates",
+                "fonts",
+                "presentation-templates",
+                "video-templates",
+                "web-templates",
+                "3d",
+                "add-ons",
+                "wordpress",
+                "cms-templates"
+              ],
+              "type": "string",
+              "description": "Type of items to search (required). Valid types:\nphotos, stock-video, music, sound-effects, graphics,\ngraphic-templates, fonts, presentation-templates,\nvideo-templates, web-templates, 3d, add-ons,\nwordpress, cms-templates"
+            },
+            "searchTerms": {
+              "maxLength": 60,
+              "minLength": 1,
+              "type": "string",
+              "description": "Keyword search query (required, min 1 character, max 60 characters)"
+            },
+            "page": {
+              "default": 1,
+              "minimum": 1,
+              "type": "integer",
+              "description": "Page number for pagination (min 1, default 1)"
+            },
+            "perPage": {
+              "default": 20,
+              "maximum": 20,
+              "minimum": 1,
+              "type": "integer",
+              "description": "Items per page (1-20, default 20)"
+            },
+            "sortBy": {
+              "default": "popular",
+              "enum": [
+                "relevance",
+                "popular",
+                "latest"
+              ],
+              "type": "string",
+              "description": "Sort order (relevance/popular/latest, default popular)"
+            },
+            "languageCode": {
+              "default": "en",
+              "enum": [
+                "en",
+                "es",
+                "fr",
+                "de",
+                "pt-BR"
+              ],
+              "type": "string",
+              "description": "Language for localized content (default en).\nSupported: en, es, fr, de, pt-BR"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "deprecated": true,
+              "description": "Deprecated free-form filter dict. Keys and accepted values per\nitem type are listed in the item-type-filters://catalog resource;\nthey are validated server-side. Prefer the per-item-type tools."
+            }
+          },
+          "required": [
+            "itemType",
+            "searchTerms"
+          ],
+          "type": "object"
+        },
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://prefab/tool/7471b62c61eb/renderer.html"
+          },
+          "fastmcp": {
+            "tags": []
+          }
+        }
+      }
+    ]
+  }
+}
