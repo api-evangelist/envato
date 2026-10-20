@@ -59,9 +59,14 @@ tools:
   description: Search the Elements catalog for cms-templates items. Supports keyword search, pagination,
     sorting, and cms-templates-specific typed refinement filters (enum-constrained per field).
 - name: search_items
-  description: DEPRECATED — use search_<itemType> instead.  Legacy monolithic search across all 14 Elements
-    item types. Still fully functional, but prefer the per-item-type tools (search_photos, search_music,
-    search_3d, …) whose typed filter fields are en
+  description: 'DEPRECATED — use search_<itemType> instead.
+
+
+    Legacy monolithic search across all 14 Elements item types. Still fully
+
+    functional, but prefer the per-item-type tools (search_photos, search_music,
+
+    search_3d, …) whose typed filter fields are enum-constrained per item type.'
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
 descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
