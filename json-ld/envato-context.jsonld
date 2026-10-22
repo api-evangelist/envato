@@ -1,0 +1,395 @@
+{
+  "@context": {
+    "@vocab": "https://envato.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "envato": "https://envato.com/schema#",
+    "AuthorSale": "envato:AuthorSale",
+    "amount": {
+      "@id": "envato:amount",
+      "@type": "xsd:string"
+    },
+    "sold_at": {
+      "@id": "envato:sold_at",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "envato:license",
+      "@type": "xsd:string"
+    },
+    "support_amount": {
+      "@id": "envato:support_amount",
+      "@type": "xsd:string"
+    },
+    "supported_until": {
+      "@id": "envato:supported_until",
+      "@type": "xsd:string"
+    },
+    "item": {
+      "@id": "envato:item",
+      "@type": "@id"
+    },
+    "buyer": {
+      "@id": "envato:buyer",
+      "@type": "xsd:string"
+    },
+    "purchase_count": {
+      "@id": "envato:purchase_count",
+      "@type": "xsd:integer"
+    },
+    "Download": "envato:Download",
+    "download_url": {
+      "@id": "envato:download_url",
+      "@type": "xsd:string"
+    },
+    "CollectionDetails": "envato:CollectionDetails",
+    "collection": {
+      "@id": "envato:collection",
+      "@type": "@id"
+    },
+    "items": {
+      "@id": "envato:items",
+      "@container": "@list"
+    },
+    "pagination": {
+      "@id": "envato:pagination",
+      "@type": "@id"
+    },
+    "ItemVersion": "envato:ItemVersion",
+    "wordpress_plugin_latest_version": {
+      "@id": "envato:wordpress_plugin_latest_version",
+      "@type": "xsd:string"
+    },
+    "wordpress_theme_latest_version": {
+      "@id": "envato:wordpress_theme_latest_version",
+      "@type": "xsd:string"
+    },
+    "Pagination": "envato:Pagination",
+    "template": {
+      "@id": "envato:template",
+      "@type": "xsd:string"
+    },
+    "pages": {
+      "@id": "envato:pages",
+      "@type": "xsd:integer"
+    },
+    "page_size": {
+      "@id": "envato:page_size",
+      "@type": "xsd:integer"
+    },
+    "BookmarkAdd": "envato:BookmarkAdd",
+    "bookmark_id": {
+      "@id": "envato:bookmark_id",
+      "@type": "xsd:string"
+    },
+    "BookmarksForItems": "envato:BookmarksForItems",
+    "bookmarks": {
+      "@id": "envato:bookmarks",
+      "@container": "@list"
+    },
+    "Bookmarks": "envato:Bookmarks",
+    "Collections": "envato:Collections",
+    "collections": {
+      "@id": "envato:collections",
+      "@container": "@list"
+    },
+    "ItemPreview": "envato:ItemPreview",
+    "type": {
+      "@id": "envato:type",
+      "@type": "xsd:string"
+    },
+    "href": {
+      "@id": "envato:href",
+      "@type": "xsd:string"
+    },
+    "small_url": {
+      "@id": "envato:small_url",
+      "@type": "xsd:string"
+    },
+    "large_url": {
+      "@id": "envato:large_url",
+      "@type": "xsd:string"
+    },
+    "large_width": {
+      "@id": "envato:large_width",
+      "@type": "xsd:integer"
+    },
+    "large_height": {
+      "@id": "envato:large_height",
+      "@type": "xsd:integer"
+    },
+    "icon_url": {
+      "@id": "envato:icon_url",
+      "@type": "xsd:string"
+    },
+    "landscape_url": {
+      "@id": "envato:landscape_url",
+      "@type": "xsd:string"
+    },
+    "square_url": {
+      "@id": "envato:square_url",
+      "@type": "xsd:string"
+    },
+    "mp3_url": {
+      "@id": "envato:mp3_url",
+      "@type": "xsd:string"
+    },
+    "mp3_id": {
+      "@id": "envato:mp3_id",
+      "@type": "xsd:string"
+    },
+    "length": {
+      "@id": "envato:length",
+      "@type": "xsd:string"
+    },
+    "thumbnail_url": {
+      "@id": "envato:thumbnail_url",
+      "@type": "xsd:string"
+    },
+    "thumbnail_width": {
+      "@id": "envato:thumbnail_width",
+      "@type": "xsd:integer"
+    },
+    "thumbnail_height": {
+      "@id": "envato:thumbnail_height",
+      "@type": "xsd:integer"
+    },
+    "video_url": {
+      "@id": "envato:video_url",
+      "@type": "xsd:string"
+    },
+    "ItemAttribute": "envato:ItemAttribute",
+    "name": {
+      "@id": "envato:name",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "envato:value",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "envato:label",
+      "@type": "xsd:string"
+    },
+    "Bookmark": "envato:Bookmark",
+    "id": {
+      "@id": "envato:id",
+      "@type": "xsd:integer"
+    },
+    "item_id": {
+      "@id": "envato:item_id",
+      "@type": "xsd:integer"
+    },
+    "collection_id": {
+      "@id": "envato:collection_id",
+      "@type": "xsd:integer"
+    },
+    "Collection": "envato:Collection",
+    "description": {
+      "@id": "envato:description",
+      "@type": "xsd:string"
+    },
+    "private": {
+      "@id": "envato:private",
+      "@type": "xsd:boolean"
+    },
+    "item_count": {
+      "@id": "envato:item_count",
+      "@type": "xsd:integer"
+    },
+    "special_role": {
+      "@id": "envato:special_role",
+      "@type": "xsd:string"
+    },
+    "image": {
+      "@id": "envato:image",
+      "@type": "xsd:string"
+    },
+    "MarketPurchaseForAuthor": "envato:MarketPurchaseForAuthor",
+    "MarketPurchaseForBuyer": "envato:MarketPurchaseForBuyer",
+    "code": {
+      "@id": "envato:code",
+      "@type": "xsd:string"
+    },
+    "PurchaseItem": "envato:PurchaseItem",
+    "number_of_sales": {
+      "@id": "envato:number_of_sales",
+      "@type": "xsd:integer"
+    },
+    "author_username": {
+      "@id": "envato:author_username",
+      "@type": "xsd:string"
+    },
+    "author_url": {
+      "@id": "envato:author_url",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "envato:url",
+      "@type": "xsd:string"
+    },
+    "attributes": {
+      "@id": "envato:attributes",
+      "@container": "@list"
+    },
+    "updated_at": {
+      "@id": "envato:updated_at",
+      "@type": "xsd:date"
+    },
+    "wordpress_theme_metadata": {
+      "@id": "envato:wordpress_theme_metadata",
+      "@type": "@id"
+    },
+    "wordpress_plugin_metadata": {
+      "@id": "envato:wordpress_plugin_metadata",
+      "@type": "@id"
+    },
+    "WordpressPluginMetadata": "envato:WordpressPluginMetadata",
+    "plugin_name": {
+      "@id": "envato:plugin_name",
+      "@type": "xsd:string"
+    },
+    "author": {
+      "@id": "envato:author",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "envato:version",
+      "@type": "xsd:string"
+    },
+    "WordpressThemeMetadata": "envato:WordpressThemeMetadata",
+    "theme_name": {
+      "@id": "envato:theme_name",
+      "@type": "xsd:string"
+    },
+    "Item": "envato:Item",
+    "site": {
+      "@id": "envato:site",
+      "@type": "xsd:string"
+    },
+    "classification": {
+      "@id": "envato:classification",
+      "@type": "xsd:string"
+    },
+    "classification_url": {
+      "@id": "envato:classification_url",
+      "@type": "xsd:string"
+    },
+    "price_cents": {
+      "@id": "envato:price_cents",
+      "@type": "xsd:integer"
+    },
+    "author_image": {
+      "@id": "envato:author_image",
+      "@type": "xsd:string"
+    },
+    "summary": {
+      "@id": "envato:summary",
+      "@type": "xsd:string"
+    },
+    "rating": {
+      "@id": "envato:rating",
+      "@type": "xsd:decimal"
+    },
+    "rating_count": {
+      "@id": "envato:rating_count",
+      "@type": "xsd:integer"
+    },
+    "published_at": {
+      "@id": "envato:published_at",
+      "@type": "xsd:date"
+    },
+    "trending": {
+      "@id": "envato:trending",
+      "@type": "xsd:boolean"
+    },
+    "tags": {
+      "@id": "envato:tags",
+      "@container": "@list"
+    },
+    "previews": {
+      "@id": "envato:previews",
+      "@container": "@list"
+    },
+    "ItemBookmark": "envato:ItemBookmark",
+    "CollectionWithItems": "envato:CollectionWithItems",
+    "Statement": "envato:Statement",
+    "count": {
+      "@id": "envato:count",
+      "@type": "xsd:integer"
+    },
+    "results": {
+      "@id": "envato:results",
+      "@container": "@list"
+    },
+    "StatementLine": "envato:StatementLine",
+    "unique_id": {
+      "@id": "envato:unique_id",
+      "@type": "xsd:string"
+    },
+    "date": {
+      "@id": "envato:date",
+      "@type": "xsd:date"
+    },
+    "order_id": {
+      "@id": "envato:order_id",
+      "@type": "xsd:integer"
+    },
+    "detail": {
+      "@id": "envato:detail",
+      "@type": "xsd:string"
+    },
+    "document": {
+      "@id": "envato:document",
+      "@type": "xsd:string"
+    },
+    "price": {
+      "@id": "envato:price",
+      "@type": "xsd:decimal"
+    },
+    "other_party_country": {
+      "@id": "envato:other_party_country",
+      "@type": "xsd:string"
+    },
+    "other_party_region": {
+      "@id": "envato:other_party_region",
+      "@type": "xsd:string"
+    },
+    "other_party_city": {
+      "@id": "envato:other_party_city",
+      "@type": "xsd:string"
+    },
+    "other_party_zipcode": {
+      "@id": "envato:other_party_zipcode",
+      "@type": "xsd:string"
+    },
+    "au_rwt": {
+      "@id": "envato:au_rwt",
+      "@type": "xsd:decimal"
+    },
+    "au_gst": {
+      "@id": "envato:au_gst",
+      "@type": "xsd:decimal"
+    },
+    "eu_vat": {
+      "@id": "envato:eu_vat",
+      "@type": "xsd:decimal"
+    },
+    "us_rwt": {
+      "@id": "envato:us_rwt",
+      "@type": "xsd:decimal"
+    },
+    "us_bwt": {
+      "@id": "envato:us_bwt",
+      "@type": "xsd:decimal"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Envato API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Envato's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-21) from openapi/envato-openapi.yml.",
+  "dcterms:created": "2026-10-21",
+  "dcterms:source": [
+    "openapi/envato-openapi.yml"
+  ]
+}

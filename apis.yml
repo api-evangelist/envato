@@ -1,12 +1,16 @@
 aid: envato
+
 url: https://raw.githubusercontent.com/api-evangelist/envato/refs/heads/main/apis.yml
+
 name: Envato
+
 kind: company
-description: >-
-  Envato runs Envato Market (per-asset marketplaces like ThemeForest, CodeCanyon, AudioJungle,
-  VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock
-  media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and
-  earnings; Elements has a separate affiliate API.
+
+description: Envato runs Envato Market (per-asset marketplaces like ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune)
+  and Envato Elements (subscription-based unlimited stock media). The Envato API exposes Market endpoints for items, search, downloads, user accounts,
+  and earnings, documented at build.envato.com; Elements runs an affiliate program, but no public affiliate API documentation was found as of
+  2026-10.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -19,6 +23,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: paid
   onboarding: self-serve
@@ -32,53 +37,146 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/envato.png
+
 x-docs-platform: swagger-ui
+
 x-docs-platform-confidence: medium
+
 x-docs-platform-checked: 2026-10-03
+
 tags:
-  - Stock Media
-  - Marketplace
-  - Themes
-  - Audio
-  - Video
-  - Graphics
-  - Subscription
-  - Australia
+- Stock Media
+- Marketplace
+- Themes
+- Audio
+- Video
+- Graphics
+- Subscription
+- Australia
+
 created: '2026-05-08'
-modified: '2026-05-08'
+
+modified: '2026-10-21'
+
 specificationVersion: '0.23'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: SecurityTxt
+  url: well-known/envato-envato-security.txt
+- type: Spectral
+  url: rules/envato-rules.yml
+- type: JSONLD
+  url: json-ld/envato-context.jsonld
+- type: Vocabulary
+  url: vocabulary/envato-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/envato-data-model.yml
+- type: Conventions
+  url: conventions/envato-conventions.yml
+- type: Security
+  url: https://www.envato.com/lp/vulnerability-disclosure/
+- type: Lifecycle
+  url: lifecycle/envato-lifecycle.yml
+- type: Conformance
+  url: conformance/envato-conformance.yml
+- type: Overlay
+  url: overlays/envato-openapi-overlay.yaml
+- type: ToolCrosswalk
+  url: mcp/envato-tool-crosswalk.yml
+- type: MCPServer
+  url: mcp/envato-mcp.yml
+- type: SecurityTxt
+  url: well-known/envato-www-security.txt
+- type: SecurityTxt
+  url: well-known/envato-security.txt
+- type: SecurityTxt
+  url: well-known/envato-mcp-security.txt
+- type: SecurityTxt
+  url: well-known/envato-elements-security.txt
+- type: SecurityTxt
+  url: well-known/envato-community-security.txt
+- type: SecurityTxt
+  url: well-known/envato-build-security.txt
+- type: SecurityTxt
+  url: well-known/envato-author-security.txt
+- type: SecurityTxt
+  url: well-known/envato-app-security.txt
+- type: SecurityTxt
+  url: well-known/envato-api-security.txt
+- type: SecurityTxt
+  url: well-known/envato-account-security.txt
+- type: WellKnown
+  url: well-known/envato-well-known.yml
+- type: Hosts
+  url: hosts/envato-hosts.yml
+- type: Vendors
+  url: vendors/envato-vendors.yml
+- type: SDKs
+  url: packages/envato-packages.yml
+- type: Packages
+  url: packages/envato-packages.yml
+- type: Documentation
+  url: https://help.author.envato.com/
+- type: AgenticAccess
+  url: agentic-access/envato-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/envato-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/envato-domain-security.yml
+- type: Authentication
+  url: authentication/envato-authentication.yml
+- type: OAuthScopes
+  url: scopes/envato-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/envato
+- type: LinkedIn
+  url: https://www.linkedin.com/company/envato
+- type: Website
+  url: https://envato.com/
+- type: DeveloperPortal
+  url: https://build.envato.com/
+- type: Plans
+  url: plans/envato-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/envato-rate-limits.yml
+- type: FinOps
+  url: finops/envato-finops.yml
+- url: https://envato.com/blog/rss.xml
+  type: Blog
+- type: APIReference
+  url: https://build.envato.com/api/
+- type: GettingStarted
+  url: https://build.envato.com/api/#get-started
+- type: TermsOfService
+  url: https://build.envato.com/terms/
+- type: PrivacyPolicy
+  url: https://www.envato.com/privacy/
+- type: StatusPage
+  url: https://status.envato.com/
+- type: Support
+  url: https://help.market.envato.com/hc/en-us
+- type: Pricing
+  url: https://elements.envato.com/pricing
+- type: Login
+  url: https://elements.envato.com/sign-in
+- type: Newsroom
+  url: https://elements.envato.com/learn/c/news
+
 apis:
-- aid: envato:market
-  name: Envato Market API
-  description: >-
-    REST API for ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, and PhotoDune.
-    Endpoints cover catalog (search, popular, new files), item detail, item downloads (for buyers), user
-    (collections, badges, items), and author (earnings, sales). OAuth 2.0 authorization code or personal
-    token authentication.
-  humanURL: https://build.envato.com/api/
-  baseURL: https://api.envato.com
-  tags:
-  - Marketplace
-  - Item
-  - Search
-  - Downloads
-  tags_raw:
-  - Marketplace
-  - Items
-  - Search
-  - Downloads
-  properties:
-  - type: Documentation
-    url: https://build.envato.com/api/
-  - type: Authentication
-    url: https://build.envato.com/authentication/
 - aid: envato:elements-affiliate
   name: Envato Elements Affiliate API
   description: >-
     Affiliate-only API for Envato Elements (subscription-based stock media). Provides search and metadata
     for catalog discovery within affiliate properties; not a general-purpose download API.
-  humanURL: https://elements.envato.com/affiliates
+  humanURL: https://help.elements.envato.com/hc/en-us/articles/11880595894297-Affiliate-program
   baseURL: https://elements.envato.com/api
   tags:
   - Elements
@@ -89,97 +187,95 @@ apis:
   - Subscription
   - Affiliate
   properties:
+  - type: Support
+    url: https://help.elements.envato.com/hc/en-us/articles/11880595894297-Affiliate-program
+- aid: envato:envato-market-api
+  name: Envato Market API
+  description: The Market API from Envato — 36 operation(s) for market.
+  humanURL: https://build.envato.com/api/
+  baseURL: https://api.envato.com
+  tags:
+  - Market
+  properties:
+  - type: OpenAPI
+    url: openapi/envato-market-api-openapi.yml
   - type: Documentation
-    url: https://elements.envato.com/affiliates
-- aid: envato:envato-author-api
-  name: Envato Author API
-  description: The Author API from Envato — 2 operation(s) for author.
-  humanURL: https://build.envato.com/api/
-  baseURL: https://api.envato.com
-  tags:
-  - Author
-  properties:
-  - type: OpenAPI
-    url: openapi/envato-author-api-openapi.yml
-- aid: envato:envato-catalog-api
-  name: Envato Catalog API
-  description: The Catalog API from Envato — 2 operation(s) for catalog.
-  humanURL: https://build.envato.com/api/
-  baseURL: https://api.envato.com
-  tags:
-  - Catalog
-  properties:
-  - type: OpenAPI
-    url: openapi/envato-catalog-api-openapi.yml
-- aid: envato:envato-downloads-api
-  name: Envato Downloads API
-  description: The Downloads API from Envato — 1 operation(s) for downloads.
-  humanURL: https://build.envato.com/api/
-  baseURL: https://api.envato.com
-  tags:
-  - Downloads
-  properties:
-  - type: OpenAPI
-    url: openapi/envato-downloads-api-openapi.yml
-- aid: envato:envato-items-api
-  name: Envato Items API
-  description: The Items API from Envato — 1 operation(s) for items.
-  humanURL: https://build.envato.com/api/
-  baseURL: https://api.envato.com
-  tags:
-  - Item
-  tags_raw:
-  - Items
-  properties:
-  - type: OpenAPI
-    url: openapi/envato-items-api-openapi.yml
+    url: https://build.envato.com/api/
+  - type: Authentication
+    url: https://build.envato.com/api/#oauth
+  - type: JSONSchema
+    url: json-schema/envato-item-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-author-sale-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-market-purchase-for-author-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-market-purchase-for-buyer-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-collection-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-collection-details-schema.json
 - aid: envato:envato-search-api
   name: Envato Search API
-  description: The Search API from Envato — 1 operation(s) for search.
+  description: The search API from Envato — 3 operation(s) for search.
   humanURL: https://build.envato.com/api/
   baseURL: https://api.envato.com
   tags:
-  - Search
+  - search
   properties:
   - type: OpenAPI
     url: openapi/envato-search-api-openapi.yml
-- aid: envato:envato-user-api
-  name: Envato User API
-  description: The User API from Envato — 4 operation(s) for user.
-  humanURL: https://build.envato.com/api/
-  baseURL: https://api.envato.com
-  tags:
-  - User
-  properties:
-  - type: OpenAPI
-    url: openapi/envato-user-api-openapi.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/envato-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/envato-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/envato-domain-security.yml
+  - type: Documentation
+    url: https://build.envato.com/api/
   - type: Authentication
-    url: authentication/envato-authentication.yml
-  - type: OAuthScopes
-    url: scopes/envato-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/envato
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/envato
-  - type: Website
-    url: https://envato.com/
-  - type: DeveloperPortal
-    url: https://build.envato.com/
-  - type: Plans
-    url: plans/envato-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/envato-rate-limits.yml
-  - type: FinOps
-    url: finops/envato-finops.yml
-  - url: https://envato.com/blog/rss.xml
-    type: Blog
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+    url: https://build.envato.com/api/#oauth
+  - type: JSONSchema
+    url: json-schema/envato-item-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-author-sale-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-market-purchase-for-author-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-market-purchase-for-buyer-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-collection-schema.json
+  - type: JSONSchema
+    url: json-schema/envato-collection-details-schema.json
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: Website https://envato.com/ 200 (redirects to elements.envato.com, same company). Removed dead build.envato.com/authentication/ (404)
+    and elements.envato.com/affiliates (404); no public Elements affiliate API docs found, humanURL now points to the affiliate program help article.
+    help.*.envato.com answer a Cloudflare challenge (403) to our crawler, treated as live.
+  generated: '2026-10-21'
+  evidence:
+  - url: https://envato.com/
+    status: 200
+  - url: https://build.envato.com/
+    status: 200
+  - url: https://build.envato.com/api/
+    status: 200
+  - url: https://build.envato.com/terms/
+    status: 200
+  - url: https://build.envato.com/authentication/
+    status: 404
+  - url: https://elements.envato.com/affiliates
+    status: 404
+  - url: https://www.envato.com/privacy/
+    status: 200
+  - url: https://status.envato.com/
+    status: 200
+  - url: https://elements.envato.com/pricing
+    status: 200
+  - url: https://elements.envato.com/sign-in
+    status: 200
+  - url: https://help.market.envato.com/hc/en-us
+    status: 403
+  - url: https://github.com/envato
+    status: 200
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 41
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

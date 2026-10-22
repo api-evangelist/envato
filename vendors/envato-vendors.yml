@@ -1,0 +1,105 @@
+generated: '2026-10-21'
+method: probed
+source: pre-flight dossier (docs platform, portal detections) + CNAME chains and response headers of the hosts apis.yml names
+registry: all/0-working/vendors.yml
+areas_vocabulary:
+- documentation
+- developer-portal
+- api-gateway
+- cdn
+- hosting
+- sdk-generation
+- api-collections
+- status-page
+- support
+- community
+- identity
+- mcp-hosting
+vendors:
+- vendor: aws-api-gateway
+  name: Amazon API Gateway
+  area: api-gateway
+  host: api.envato.com
+  evidence: header:x-amz-apigw-id
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: cloudflare
+  name: Cloudflare
+  area: cdn
+  host: help.author.envato.com
+  evidence: header:cf-ray
+  signal: header
+  confidence: high
+  kin_score:
+  - https_enforced
+  - hsts
+- vendor: cloudfront
+  name: Amazon CloudFront
+  area: cdn
+  host: build.envato.com
+  evidence: header:x-amz-cf-id
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: swagger-ui
+  name: Swagger UI
+  area: documentation
+  host: build.envato.com
+  evidence: markup:swagger-ui
+  signal: docs-platform
+  confidence: medium
+  kin_score:
+  - openapi_published
+- vendor: vercel
+  name: Vercel
+  area: hosting
+  host: status.envato.com
+  evidence: cname:vercel-dns.com
+  signal: cname
+  confidence: high
+  kin_score: []
+- vendor: incident-io
+  name: incident.io
+  area: status-page
+  host: status.envato.com
+  evidence: cname:incident.io
+  signal: cname
+  confidence: high
+  kin_score:
+  - status_page
+- vendor: zendesk
+  name: Zendesk
+  area: support
+  host: help.author.envato.com
+  evidence: cname:zendesk.com
+  signal: cname
+  confidence: high
+  kin_score:
+  - support_channel
+reliance:
+  areas_vendor_served:
+  - api-gateway
+  - cdn
+  - documentation
+  - hosting
+  - status-page
+  - support
+  vendor_count: 7
+  areas_observed: 12
+  share_of_observable_areas: 0.5
+  note: areas where a third party was DETECTED serving this provider; an area absent here was either self-run or not observed, and this script
+    cannot tell those apart
+checked:
+- 'docs-platform: swagger-ui'
+- help.author.envato.com (Documentation)
+- envato.com (Website)
+- build.envato.com (DeveloperPortal)
+- build.envato.com (APIReference)
+- build.envato.com (GettingStarted)
+- status.envato.com (StatusPage)
+- help.market.envato.com (Support)
+- elements.envato.com (Login)
+- api.envato.com (baseURL)
+- elements.envato.com (baseURL)
+- mcp.envato.com (mcp)

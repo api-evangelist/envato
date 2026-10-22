@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/envato/main/json-schema/envato-collection-schema.json",
+  "title": "Collection",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/envato-openapi.yml#/components/schemas/Collection",
+  "required": [
+    "id",
+    "name",
+    "description",
+    "private",
+    "item_count",
+    "special_role",
+    "image"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "private": {
+      "type": "boolean"
+    },
+    "item_count": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "special_role": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    }
+  }
+}

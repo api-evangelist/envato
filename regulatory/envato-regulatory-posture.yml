@@ -1,0 +1,88 @@
+generated: '2026-10-21'
+method: searched
+source:
+- https://www.envato.com/privacy/
+notes: >-
+  Read from Envato's own Privacy Policy (200). The Elements User Terms page
+  (https://help.elements.envato.com/hc/en-us/articles/360000629006-User-Terms) returned 403 to
+  a plain GET on 2026-10-21 and was not read. https://www.envato.com/legal/ and
+  https://www.envato.com/accessibility/ returned 404. No subprocessor list, incident
+  notification, accessibility, transparency-report or SBOM language was found.
+signals:
+  data_subject_request:
+    url: https://www.envato.com/privacy/
+    section: Your rights relating to your personal information
+    evidence:
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: to receive any personal information we hold about you in a structured and commonly used machine readable format or have such personal information transmitted to another company;
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: You can access or correct some of the personal information that we process by logging into your account. You can also close the account you have with us for any Envato Site at any time, subject to the user terms applicable to that Envato Site.
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: contact our Data Protection Officer in writing at PO Box 16122, Collins Street West, Victoria 8007 Australia
+    note: Jurisdiction-dependent rights of access, correction, deletion, restriction, objection, portability and opt-out of sale/sharing, exercised via account self-service, a Data Protection Officer, or a help-centre request form. Identity verification may be required, and costs may be passed on where the law allows.
+  data_retention:
+    url: https://www.envato.com/privacy/
+    section: How long we keep your personal information and how you can manage or delete your personal information
+    evidence:
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: We retain your personal information for as long as is necessary for the purposes outlined in this policy.
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: Please note that if you request the deletion of your personal information, we may retain information from deleted accounts as necessary for our legitimate business interests, to comply with the law, prevent fraud, collect fees, resolve disputes, troubleshoot problems, assist with investigations or requests by governments, courts of law, or law enforcement and other public authorities (including tax authorities), enforce the user terms and take other actions permitted by law.
+    note: Purpose-bound retention set by stated criteria; no fixed retention periods are published, and data from deleted accounts may be kept on listed grounds.
+  data_residency:
+    url: https://www.envato.com/privacy/
+    section: Where we transfer and/or store your personal information
+    evidence:
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: We are based in the USA, Australia, New Zealand, Mexico and other countries in which Group Companies maintain operations or facilities, so when your data is transferred to us it will be processed in those countries.
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: For example, if you are in the EEA or the UK, we may rely on a UK government adequacy regulation or adequacy decision by the European Commission, on contractual protections for the transfer of your personal information or a derogation if available.
+    note: Processing takes place in several countries, and EEA/UK transfers rely on adequacy decisions, contractual protections or derogations. No customer-selectable data residency is offered.
+  subprocessors:
+    url: https://www.envato.com/privacy/
+    section: When we disclose your personal information
+    evidence:
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: 'subcontractors and service providers who assist us in connection with the ways we use personal information (as set out above), in particular: website hosting providers; artificial intelligence (AI) service providers; recruitment agencies; marketing and analytics services; security and fraud prevention services; subscription management services; payment processing services; identification verification services; and operational tooling services;'
+    note: Recipients are named by category only, apart from the identity-verification vendors Jumio and Veriff, which are given as examples elsewhere in the policy. No named subprocessor list was found.
+  ai_transparency:
+    url: https://www.envato.com/privacy/
+    evidence:
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: Some features of the Envato Sites use artificial intelligence (AI) technologies provided by third-party service providers.
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: We share your uploaded images with our AI technology service providers only to enable the requested functionality.
+    note: Discloses that third-party AI providers power image editing, image-to-video and visual-similarity search, and limits how uploaded images are shared. It does not say whether uploads are used to train models.
+  global_privacy_control:
+    url: https://www.envato.com/privacy/
+    section: Marketing choices regarding your personal information
+    evidence:
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: We currently do not respond to “Do Not Track” or similar signals.
+    - source: https://www.envato.com/privacy/
+      http_status: 200
+      fetched: '2026-10-21'
+      quote: To exercise this right, you can click the “Do Not Sell or Share My Personal Information” link on the footer of our website.
+    note: A denial. Browser privacy signals ("or similar signals", which would include GPC) are not honoured. Opting out of sale/sharing is done through a footer link instead.

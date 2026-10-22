@@ -1,0 +1,57 @@
+generated: '2026-10-21'
+method: searched
+source: https://build.envato.com/api/
+note: >-
+  The Envato API documentation (build.envato.com/api/) names no first-party SDK or client library.
+  Searched npm, PyPI, RubyGems and Packagist; every API client found is community-maintained. PyPI has
+  no `envato` or `envato-api` package (404). The only first-party code found is the Envato Market
+  WordPress plugin in the envato GitHub org, distributed from GitHub releases rather than a registry.
+packages:
+- name: wp-envato-market
+  registry: github
+  url: https://github.com/envato/wp-envato-market
+  language: php
+  official: true
+  version: v2.0.14
+  published: '2026-05-13'
+  note: WordPress Theme & Plugin management for the Envato Market (envato GitHub org); version and date from the GitHub releases API.
+- name: envato
+  registry: npm
+  url: https://www.npmjs.com/package/envato
+  language: typescript
+  official: false
+  version: 3.2.0
+  published: '2023-09-04'
+  note: '"A fully typed library for the Envato API (unofficial)." Maintainer baileyherbert.'
+- name: envato-api
+  registry: npm
+  url: https://www.npmjs.com/package/envato-api
+  language: javascript
+  official: false
+  version: 1.0.2
+  published: '2018-08-29'
+  note: Community package (baileyherbert).
+- name: node-envato
+  registry: npm
+  url: https://www.npmjs.com/package/node-envato
+  language: javascript
+  official: false
+  version: 1.0.1
+  published: '2017-02-23'
+  note: Community wrapper (tolgaergin/node-envato).
+- name: envato
+  registry: rubygems
+  url: https://rubygems.org/gems/envato
+  language: ruby
+  official: false
+  version: 1.0.1
+  published: '2022-10-23'
+  note: '"WIP - Envato API wrapper written in Ruby" by Ilya Brin (ruby-api-client/envato).'
+- name: baileyherbert/envato
+  registry: packagist
+  url: https://packagist.org/packages/baileyherbert/envato
+  language: php
+  official: false
+  version: null
+  published: null
+  note: Community PHP client found via Packagist search; version not read from registry metadata.

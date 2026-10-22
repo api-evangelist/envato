@@ -1,0 +1,23 @@
+generated: '2026-10-21'
+method: searched
+source: https://build.envato.com/api/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: '"The Envato Market API supports the full OAuth authentication flow" -- authorization code grant at https://api.envato.com/authorization
+    and https://api.envato.com/token, refresh tokens, and the implicit flow (https://build.envato.com/api/).'
+- id: rfc6585-429
+  conforms: true
+  evidence: '"you will receive a HTTP 429 response. Included in this response is a HTTP header Retry-After" (https://build.envato.com/api/).'
+- id: idempotency
+  conforms: false
+  evidence: No idempotency mechanism documented on https://build.envato.com/api/.
+- id: openapi-3.0
+  conforms: true
+  evidence: the document declares 3.0.0
+- id: rfc9457
+  conforms: false
+  evidence: no response declares application/problem+json
+- id: pagination
+  conforms: true
+  evidence: list operations take page, page_size

@@ -1,27 +1,42 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/envato-openapi.yml
+generated: '2026-10-21'
+method: searched
+source: https://build.envato.com/api/
+docs: https://build.envato.com/api/
 summary:
   types:
-  - http
   - oauth2
+  - http
   oauth2_flows:
   - authorizationCode
+  - implicit
 schemes:
-- name: bearerAuth
-  type: http
-  scheme: bearer
-  bearerFormat: Personal Token
-  description: 'Envato personal token issued from build.envato.com. Sent as `Authorization:
-    Bearer <token>`.'
-  sources:
-  - openapi/envato-openapi.yml
 - name: oauth2
   type: oauth2
+  description: >-
+    "The Envato Market API supports the full OAuth authentication flow, so that you can allow users of
+    your app to sign in with their Envato Account in order to access the API on their behalf." Apps are
+    registered at https://build.envato.com/my-apps with the permissions they need.
   flows:
   - flow: authorizationCode
     authorizationUrl: https://api.envato.com/authorization
     tokenUrl: https://api.envato.com/token
-    scopes: 1
+    token_lifetime: 'expires_in: 3600 ("valid for up to an hour")'
+    refresh: refresh_token returned with the access token; used to request a new access token
+    notes: 'The [REDIRECT URI] (Confirmation URL) must use https://. Token request is sent "encoded as application/x-www-form-urlencoded".'
+  - flow: implicit
+    authorizationUrl: https://api.envato.com/authorization
+    notes: '"the Envato API also supports the alternate, implicit OAuth authentication flow, if you are developing a browser-based app" (declared in the OpenAPI as the only flow).'
+  scopes: 18
+  scopes_ref: scopes/envato-scopes.yml
   sources:
   - openapi/envato-openapi.yml
+  - https://build.envato.com/api/
+- name: personalToken
+  type: http
+  scheme: bearer
+  description: >-
+    "you can simply generate a personal token, and then insert it directly into the authorization header
+    on any API requests: curl -H "Authorization: Bearer ..."". Generated at https://build.envato.com/create-token/.
+  header: Authorization
+  sources:
+  - https://build.envato.com/api/

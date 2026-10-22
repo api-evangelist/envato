@@ -1,17 +1,118 @@
-generated: '2026-07-11'
+generated: '2026-10-21'
 method: derived
 source: openapi/envato-openapi.yml
 schemes:
 - name: oauth2
   source: openapi/envato-openapi.yml
   flows:
-  - flow: authorizationCode
+  - flow: implicit
     authorizationUrl: https://api.envato.com/authorization
-    tokenUrl: https://api.envato.com/token
 scopes:
 - scope: default
-  description: Default Envato Market scope set
+  description: View and search Envato sites
   flows:
-  - authorizationCode
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: purchase:download
+  description: Download my purchased items
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: purchase:history
+  description: View my purchases of the app creator's items
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: purchase:list
+  description: List purchases I've made
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: purchase:verify
+  description: Verify purchases I've made
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: sale:history
+  description: View my items' sales history
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: sale:verify
+  description: Verify purchases of my items
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: stat:total_community_earnings
+  description: Shows the total amount of community earnings on Envato Market
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: stat:total_items
+  description: Shows the total number of items available on Envato Market
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: stat:total_items_sold
+  description: Shows the total number of items sold on Envato Market
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: stat:total_users
+  description: View the total number of subscribed users to Envato Market
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:account
+  description: View my account profile details
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:collections
+  description: View my public and private collections
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:email
+  description: View my email address
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:favourite_collection_add
+  description: Add item to favourite collection
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:financial
+  description: View my account financial history
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:statement
+  description: View my statement transactions
+  flows:
+  - implicit
+  sources:
+  - openapi/envato-openapi.yml
+- scope: user:username
+  description: View my Envato Account username
+  flows:
+  - implicit
   sources:
   - openapi/envato-openapi.yml

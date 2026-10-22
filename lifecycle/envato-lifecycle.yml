@@ -1,0 +1,10 @@
+generated: '2026-10-21'
+method: searched
+source: https://build.envato.com/api/
+versioning: Path-versioned endpoints (/v1/market, /v3/market, /v1/discovery/search); no API versioning policy is published on build.envato.com.
+deprecation: No deprecation policy, Sunset or Deprecation header documented. The contract marks no operations deprecated.
+status_page: https://status.envato.com/
+terms:
+  url: https://build.envato.com/terms/
+  last_revised: March 11 2025
+  change_text: We will post the current version of these API Terms on our website. You can also keep track of whether changes have been made by referring to the version and effective date of the API Terms.

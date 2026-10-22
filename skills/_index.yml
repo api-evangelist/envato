@@ -1,0 +1,15 @@
+name: Envato agent skills
+generated: '2026-10-21'
+method: generated
+source: openapi/envato-openapi.yml
+api: openapi/envato-openapi.yml
+note: Envato publishes no skills or AGENTS.md of its own. These skills are generated from the OpenAPI.
+skills:
+  - name: envato-search-market-items
+    path: skills/envato-search-market-items.md
+  - name: envato-verify-purchase-code
+    path: skills/envato-verify-purchase-code.md
+  - name: envato-download-purchases
+    path: skills/envato-download-purchases.md
+  - name: envato-manage-collections
+    path: skills/envato-manage-collections.md

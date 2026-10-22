@@ -1,0 +1,126 @@
+generated: '2026-10-21'
+method: derived
+source: mcp/envato-mcp-tools.json (live tools/list capture 2026-10-20) + openapi/envato-openapi.yml
+name: Envato MCP tool crosswalk
+purpose: Binds each tool on the Envato MCP server to a public REST operation where one exists.
+surfaces:
+  openapi:
+    path: openapi/envato-openapi.yml
+    server: https://api.envato.com
+    gated: OAuth2 / personal token for private endpoints
+    operations: 39
+  mcp:
+    url: https://mcp.envato.com/mcp
+    tools: 15
+    gated: no (initialize + tools/list answered anonymously; no tool was called)
+  graphql: null
+crosswalk: []
+mcp_only:
+- tool: search_photos
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_stock_video
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_music
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_sound_effects
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_graphics
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_graphic_templates
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_fonts
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_presentation_templates
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_video_templates
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_web_templates
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_3d
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_add_ons
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_wordpress
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_cms_templates
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+- tool: search_items
+  reason: Searches the Envato Elements subscription catalog. The public REST API (api.envato.com) covers Envato
+    Market (ThemeForest, CodeCanyon, etc.) and has no Elements search operation. getSearchItem searches Market items
+    with different parameters, so it does not back this tool.
+rest_only:
+- getSearchMoreLikeThis
+- getSearchComment
+- getSearchItem
+- getNumberOfFiles
+- getTotalUsers
+- getTotalItems
+- getItemPrices
+- getUser
+- getUserItemsBySite
+- getPopular
+- getCategories
+- getFeatures
+- getNewFiles
+- getNewFilesFromUser
+- getRandomNewFiles
+- getUserBadges
+- getUserEarningsAndSalesByMonth
+- getUserAccount
+- getUserUsername
+- getUserAliasUsername
+- getUserEmail
+- getAuthorSales
+- getAuthorSale
+- getBuyerDownload
+- getBuyerListPurchases
+- getBuyerPurchase
+- getBuyerPurchases
+- getCatalogCollection
+- getCatalogItemVersion
+- getCatalogItem
+- putBookmarkAdd
+- deleteBookmarkRemove
+- getBookmarksForItems
+- getBookmarks
+- postCollectionCreate
+- getUserCollection
+- getUserCollections
+- putUserFavouriteCollectionAdd
+- getUserStatement
+coverage:
+  mcp_tools: 15
+  tools_bound_to_rest: 0
+  mcp_only: 15
+  rest_operations: 39
+  rest_only: 39
+note: 'An empty crosswalk is the finding: the MCP server and the REST API cover two different Envato catalogs (Elements
+  and Market).'

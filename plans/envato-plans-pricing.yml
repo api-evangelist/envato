@@ -1,96 +1,63 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Envato
-providerId: envato
-created: '2026-05-08'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-08, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-08'
-reconciled: true
-tags:
-- Stock Media
-- Marketplace
-- Themes
-- Audio
-- Video
-- Graphics
-- Subscription
-- Plans
-description: >-
-  Envato Market is per-asset (buyers pay per item; authors take a revenue share). Envato Elements is a
-  subscription with unlimited downloads of covered media for active subscribers. The Market API itself
-  is free for registered apps; per-asset purchases happen on the marketplace. Elements affiliate API
-  is free for approved affiliates.
-notes: "Two product lines: Market (per-asset) and Elements (subscription). Market API is free; purchases are per-asset."
-sources:
-- https://build.envato.com/api/
-- https://elements.envato.com/
-- https://themeforest.net/
+name: Envato pricing
+generated: '2026-10-21'
+method: searched
+source: https://elements.envato.com/pricing
+audience: business-product
+pricing_basis: tiered-subscription
+published: true
+delivery:
+  delivery: managed
+note: >-
+  These are Envato Elements subscription prices (the creative-asset product), not API prices. The
+  Envato Market API documentation (https://build.envato.com/api/) and API Terms
+  (https://build.envato.com/terms/) publish no API fee; access is by registered app (OAuth) or personal
+  token. Market items are bought per asset on the marketplace. Monthly-billing prices are quoted on the
+  page as "billed annually or monthly for USD ..." and are kept inside price_text.
+plan_count: 4
 plans:
-- id: envato-market-api
-  name: Envato Market API
-  type: free
-  description: Free OAuth/personal-token API access. Buyers pay per asset on the marketplace.
-  entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: requests
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: 0
-    userMultiplied: false
-  elements:
-  - name: OAuth 2.0
-  - name: Personal tokens
-  - name: Per-asset purchases handled on marketplace
-- id: envato-elements-subscription
-  name: Envato Elements Subscription
-  type: subscription
-  description: Subscription for unlimited downloads of covered media (templates, stock photos/video, audio, fonts).
-  entries:
-  - label: Subscription
-    name: subscription
-    type: flat
-    metric: month
-    limit: -1
-    timeFrame: monthly
-    geo: global
-    unit: 1
-    price: see https://elements.envato.com/pricing
-    userMultiplied: false
-  elements:
-  - name: Individual, Teams, Enterprise tiers
-  - name: Affiliate API available to partners
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-x-canonical:
-  generated: '2026-10-08'
-  vocabulary: all/0-working/economics/plans-canonical.yml
-  models:
-  - subscription
-  units:
-  - period
-  - request
-  plans:
-  - name: Envato Market API
-    access: free
-    model: subscription
-    model_how: derived
-    units:
-    - request
-    periods:
-    - per-use
-  - name: Envato Elements Subscription
-    access: other
-    model: subscription
-    model_how: stated
-    units:
-    - period
-    periods:
-    - month
+- name: Core
+  description: For those who need unlimited access to pro-grade creative assets and templates
+  price_text: $16.50 /month billed annually or monthly for USD $39
+  currency: USD
+  billing_period: month
+  features:
+  - 'Unlimited downloads of 29+ million creative assets'
+  - 20 complimentary AI credits per month
+  - Lifetime commercial license for all stock assets & AI generations
+  limits:
+  - 20 complimentary AI credits per month
+- name: Plus
+  description: For those ready to extend their creative asset toolkit with generative AI
+  price_text: $39 /month billed annually or monthly for USD $59
+  currency: USD
+  billing_period: month
+  features:
+  - 200 AI credits per month
+  - 3 parallel AI generations
+  - Unlimited downloads of 29+ million creative stock assets
+  - Lifetime commercial license for all stock assets & AI generations
+  limits:
+  - 200 AI credits per month
+  - 3 parallel AI generations
+- name: Ultimate
+  description: For those ready to deliver more, faster with the ultimate creative asset toolkit
+  price_text: $168 /month billed annually or monthly for USD $259
+  currency: USD
+  billing_period: month
+  features:
+  - 1,000 AI credits per month
+  - 10 parallel AI generations
+  - Unlimited downloads of 29+ million creative stock assets
+  - Lifetime commercial license for all stock assets & AI generations
+  limits:
+  - 1,000 AI credits per month
+  - 10 parallel AI generations
+- name: Enterprise
+  description: Perfect for organizations, agencies, and companies with more than 50 employees
+  price: Contact Sales
+  price_text: Contact Sales
+  features:
+  - Custom number of seats
+  - Custom licensing and tailored indemnification
+  - Simple invoicing and dedicated account manager
+  limits: []

@@ -1,44 +1,20 @@
-specification: API Commons Rate Limits
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
-provider: Envato
-providerId: envato
-created: '2026-05-08'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-08, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-08'
-reconciled: false
-tags:
-- Stock Media
-- Marketplace
-- Themes
-- Audio
-- Video
-- Graphics
-- Subscription
-- Rate Limiting
-- Quotas
-- Throttling
-description: >-
-  Envato Market API enforces per-app rate limits and returns standard rate-limit headers.
-  Documentation does not publish exact RPS thresholds; bursting is throttled with HTTP 429.
-notes: Per-app limits; specific thresholds not publicly documented.
-sources:
-- https://build.envato.com/api/
-responseCodes:
-  throttled: 429
+name: Envato rate limits
+generated: '2026-10-21'
+method: searched
+source: https://build.envato.com/api/
+limit_count: 1
+note: >-
+  Envato publishes no numeric limits: "All requests to the Envato API are dynamically rate limited. As
+  such are unable to provide static values as these will vary between clients." Factors named: number of
+  previously made requests, requested endpoint, client IP reputation.
+exhaustion_status: 429
+response_headers:
+- Retry-After
 limits:
-- name: Per app
-  scope: application
-  metric: requests
-  limit: see provider documentation
-  notes: Per-app throttle; returns 429.
-policies:
-- name: Backoff Strategy
-  description: On 429, apply exponential backoff with jitter.
-- name: Caching
-  description: Cache catalog responses; metadata is reasonably stable.
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- name: Dynamic rate limit
+  scope: per-client
+  limit_text: All requests to the Envato API are dynamically rate limited.
+  status_on_exhaustion: 429
+  headers:
+  - Retry-After
+  signal_text: Included in this response is a HTTP header Retry-After that will denote in seconds how long you have to wait until you're able to make requests again.

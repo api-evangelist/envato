@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/envato/main/json-schema/envato-market-purchase-for-author-schema.json",
+  "title": "MarketPurchaseForAuthor",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/envato-openapi.yml#/components/schemas/MarketPurchaseForAuthor",
+  "required": [
+    "amount",
+    "sold_at",
+    "license",
+    "support_amount",
+    "supported_until",
+    "item"
+  ],
+  "properties": {
+    "amount": {
+      "type": "string",
+      "description": "Author earning amount"
+    },
+    "sold_at": {
+      "type": "string",
+      "format": "date",
+      "description": "Purchase date"
+    },
+    "license": {
+      "type": "string",
+      "description": "License name"
+    },
+    "support_amount": {
+      "type": "string",
+      "description": "Included author support earning amounts"
+    },
+    "supported_until": {
+      "type": "string",
+      "description": "End of included support date"
+    },
+    "item": {
+      "$ref": "#/$defs/Item"
+    },
+    "buyer": {
+      "type": "string",
+      "description": "Buyer username"
+    },
+    "purchase_count": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Number of purchases of this item by this buyer"
+    }
+  },
+  "$defs": {
+    "Item": {
+      "required": [
+        "id",
+        "name",
+        "number_of_sales",
+        "author_username",
+        "author_url",
+        "url",
+        "attributes",
+        "description",
+        "site",
+        "classification",
+        "classification_url",
+        "price_cents",
+        "author_image",
+        "thumbnail_url",
+        "summary",
+        "rating",
+        "rating_count",
+        "published_at",
+        "trending",
+        "tags"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Item ID"
+        },
+        "name": {
+          "type": "string",
+          "description": "Item name"
+        },
+        "number_of_sales": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "author_username": {
+          "type": "string"
+        },
+        "author_url": {
+          "type": "string",
+          "description": "Author profile URL (e.g. https://themeforest.net/user/authorusername)"
+        },
+        "url": {
+          "type": "string",
+          "description": "Item URL (e.g. https://themeforest.net/item/item-name/12345)"
+        },
+        "attributes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ItemAttribute"
+          }
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of last item update approval on Market"
+        },
+        "wordpress_theme_metadata": {
+          "$ref": "#/$defs/WordpressThemeMetadata"
+        },
+        "wordpress_plugin_metadata": {
+          "$ref": "#/$defs/WordpressPluginMetadata"
+        },
+        "description": {
+          "type": "string",
+          "description": "HTML description"
+        },
+        "site": {
+          "type": "string",
+          "description": "Market site domain (e.g. themeforest.net)"
+        },
+        "classification": {
+          "type": "string",
+          "description": "Category path (e.g. wordpress/corporate/business)"
+        },
+        "classification_url": {
+          "type": "string",
+          "description": "Category URL (e.g. https://themeforest.net/category/wordpress/corporate/business)"
+        },
+        "price_cents": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Base price, in cents"
+        },
+        "author_image": {
+          "type": "string",
+          "description": "Author avatar image URL"
+        },
+        "thumbnail_url": {
+          "type": "string",
+          "description": "Item thumbnail image URL"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Attributes summary (e.g. High Resolution: Yes, Layered: Yes)"
+        },
+        "rating": {
+          "type": "number",
+          "format": "float",
+          "description": "Average rating"
+        },
+        "rating_count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Rating count"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date",
+          "description": "Date of first approval on Market"
+        },
+        "trending": {
+          "type": "boolean",
+          "description": "Item currently trending?"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Array of tags",
+          "items": {
+            "type": "string"
+          }
+        },
+        "previews": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ItemPreview"
+          }
+        }
+      }
+    },
+    "ItemAttribute": {
+      "required": [
+        "name",
+        "value",
+        "label"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Attribute name"
+        },
+        "value": {
+          "type": "string",
+          "description": "Attribute value"
+        },
+        "label": {
+          "type": "string",
+          "description": "Attribute label"
+        }
+      }
+    },
+    "ItemPreview": {
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Item preview type"
+        },
+        "href": {
+          "type": "string"
+        },
+        "small_url": {
+          "type": "string"
+        },
+        "large_url": {
+          "type": "string"
+        },
+        "large_width": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "large_height": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "icon_url": {
+          "type": "string"
+        },
+        "landscape_url": {
+          "type": "string"
+        },
+        "square_url": {
+          "type": "string"
+        },
+        "mp3_url": {
+          "type": "string"
+        },
+        "mp3_id": {
+          "type": "string"
+        },
+        "length": {
+          "type": "string"
+        },
+        "thumbnail_url": {
+          "type": "string"
+        },
+        "thumbnail_width": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "thumbnail_height": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "video_url": {
+          "type": "string"
+        }
+      }
+    },
+    "WordpressPluginMetadata": {
+      "required": [
+        "plugin_name"
+      ],
+      "properties": {
+        "plugin_name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
+    "WordpressThemeMetadata": {
+      "required": [
+        "theme_name",
+        "author",
+        "version",
+        "description"
+      ],
+      "properties": {
+        "theme_name": {
+          "type": "string"
+        },
+        "author": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

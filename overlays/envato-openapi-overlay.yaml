@@ -1,0 +1,41 @@
+overlay: 1.0.0
+info:
+  title: Envato API agent enhancements
+  version: 1.0.0
+extends: ../openapi/_original/envato-openapi.yml
+x-generated: '2026-10-21'
+x-method: generated
+actions:
+- target: $.info
+  update:
+    x-mcp-server:
+      url: https://mcp.envato.com/mcp
+      note: Covers Envato Elements search only; does not proxy this Market API. See mcp/envato-tool-crosswalk.yml.
+    x-rate-limits:
+      throttled_status: 429
+      note: Per-app limits; thresholds not publicly documented (rate-limits/envato-rate-limits.yml).
+- target: $.paths['/v1/discovery/search/search/item'].get
+  update:
+    summary: Search Market items
+- target: $.paths['/v1/discovery/search/search/comment'].get
+  update:
+    summary: Search item comments
+- target: $.paths['/v1/discovery/search/search/more_like_this'].get
+  update:
+    summary: Find similar items
+- target: $.paths['/v3/market/buyer/download'].get
+  update:
+    x-agent-hint: Each call counts against the item's daily download limit (per the operation description). Do not call it speculatively.
+- target: $.paths['/v3/market/user/collection_create'].post
+  update:
+    x-agent-confirm: true
+    x-idempotent: false
+- target: $.paths['/v3/market/user/bookmark_add'].put
+  update:
+    x-agent-confirm: true
+- target: $.paths['/v3/market/user/bookmark_remove'].delete
+  update:
+    x-agent-confirm: true
+- target: $.paths['/v3/market/user/favourite_collection_add'].put
+  update:
+    x-agent-confirm: true

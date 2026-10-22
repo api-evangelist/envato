@@ -1,0 +1,134 @@
+generated: '2026-10-21'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/envato-openapi.yml
+vocabulary:
+  name: Envato Domain Vocabulary
+  description: 'Terms declared by Envato''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-21'
+  terms:
+  - term: AuthorSale
+    definition: 'Object declared by the contract with fields: amount, sold_at, license, support_amount, supported_until, item, buyer, purchase_count.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/AuthorSale
+  - term: Download
+    definition: 'Object declared by the contract with fields: download_url.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Download
+  - term: CollectionDetails
+    definition: 'Object declared by the contract with fields: collection, items, pagination.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/CollectionDetails
+  - term: ItemVersion
+    definition: 'Object declared by the contract with fields: wordpress_plugin_latest_version, wordpress_theme_latest_version.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/ItemVersion
+  - term: Pagination
+    definition: 'Object declared by the contract with fields: template, pages, page_size.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Pagination
+  - term: BookmarkAdd
+    definition: 'Object declared by the contract with fields: bookmark_id.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/BookmarkAdd
+  - term: BookmarksForItems
+    definition: 'Object declared by the contract with fields: bookmarks.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/BookmarksForItems
+  - term: Bookmarks
+    definition: 'Object declared by the contract with fields: bookmarks.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Bookmarks
+  - term: Collections
+    definition: 'Object declared by the contract with fields: collections.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Collections
+  - term: ItemPreview
+    definition: 'Object declared by the contract with fields: type, href, small_url, large_url, large_width, large_height, icon_url, landscape_url,
+      square_url, mp3_url, mp3_id, length. (4 more)'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/ItemPreview
+  - term: ItemAttribute
+    definition: 'Object declared by the contract with fields: name, value, label.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/ItemAttribute
+  - term: Bookmark
+    definition: 'Object declared by the contract with fields: id, item_id, collection_id.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Bookmark
+  - term: Collection
+    definition: 'Object declared by the contract with fields: id, name, description, private, item_count, special_role, image.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Collection
+  - term: MarketPurchaseForAuthor
+    definition: 'Object declared by the contract with fields: amount, sold_at, license, support_amount, supported_until, item, buyer, purchase_count.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/MarketPurchaseForAuthor
+  - term: MarketPurchaseForBuyer
+    definition: 'Object declared by the contract with fields: amount, sold_at, license, support_amount, supported_until, item, code.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/MarketPurchaseForBuyer
+  - term: PurchaseItem
+    definition: 'Object declared by the contract with fields: id, name, number_of_sales, author_username, author_url, url, attributes, updated_at,
+      wordpress_theme_metadata, wordpress_plugin_metadata.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/PurchaseItem
+  - term: WordpressPluginMetadata
+    definition: 'Object declared by the contract with fields: plugin_name, author, version, description.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/WordpressPluginMetadata
+  - term: WordpressThemeMetadata
+    definition: 'Object declared by the contract with fields: theme_name, author, version, description.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/WordpressThemeMetadata
+  - term: Item
+    definition: 'Object declared by the contract with fields: id, name, number_of_sales, author_username, author_url, url, attributes, updated_at,
+      wordpress_theme_metadata, wordpress_plugin_metadata, description, site. (12 more)'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Item
+  - term: ItemBookmark
+    definition: 'Object declared by the contract with fields: id, item_id, collection.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/ItemBookmark
+  - term: CollectionWithItems
+    definition: 'Object declared by the contract with fields: collection, items.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/CollectionWithItems
+  - term: Statement
+    definition: 'Object declared by the contract with fields: count, results, pagination.'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/Statement
+  - term: StatementLine
+    definition: 'Object declared by the contract with fields: unique_id, date, order_id, type, detail, item_id, document, price, amount, site,
+      other_party_country, other_party_region. (7 more)'
+    tags:
+    - Object
+    source: openapi/envato-openapi.yml#/components/schemas/StatementLine
+  - term: search
+    definition: 'Resource group in the contract; its operation GET /v1/discovery/search/search/more_like_this: Find similar items'
+    tags:
+    - Resource Group
+    source: openapi/envato-openapi.yml

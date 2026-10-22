@@ -1,57 +1,399 @@
 openapi: 3.2.0
 info:
-  title: Envato Market Search API
-  version: 3.0.0
-  description: Envato Market REST API. Provides catalog discovery, item detail, search, item downloads (for buyers), user account info, badges, collections, and author earnings/sales across Envato's per-asset marketplaces (ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune). Best-effort spec derived from publicly documented surfaces; not exhaustive.
-  contact:
-    name: Envato Build
-    url: https://build.envato.com/api/
-  license:
-    name: Proprietary
+  title: Envato Search API
+  version: '0.1'
+  description: Envato Market API, normalized from the provider-published API description at https://api.envato.com/api-docs (loaded by the official docs at https://build.envato.com/api/). Per-path basePath values were folded into the paths; operations are otherwise verbatim. The published document references definitions it does not include (AliasUsername, Categories, CommentResults, EarningsAndSalesByMonth, Email, Features, ItemPrices, NewFiles, NewFilesFromUser, NumberOfFiles, Popular, RandomNewFiles, Result, Result_SimpleEntity, TotalItems, TotalUsers, User, UserAccount, UserItemsBySite, Username); those schemas are left open and marked x-unresolved-ref rather than invented.
+  x-source: https://api.envato.com/api-docs
+  x-ownership: Served from api.envato.com and loaded by Envato's own API docs at build.envato.com/api/; basePath https://api.envato.com and the OAuth authorizationUrl https://api.envato.com/authorization both point at Envato.
 servers:
 - url: https://api.envato.com
-  description: Envato API production base URL
 security:
-- bearerAuth: []
 - oauth2:
   - default
+  - user:username
+  - user:email
+  - user:account
+  - user:financial
+  - purchase:download
+  - sale:history
+  - sale:verify
+  - purchase:list
+  - purchase:verify
+  - purchase:history
+  - user:favourite_collection_add
+  - user:collections
+  - user:statement
+  - stat:total_users
+  - stat:total_items
+  - stat:total_community_earnings
+  - stat:total_items_sold
 tags:
 - name: Search
 paths:
-  /v1/discovery/search/search/item:
+  /v1/discovery/search/search/more_like_this:
     get:
-      tags:
-      - Search
-      summary: Search items in the marketplace catalog
-      operationId: searchItems
+      description: Find similar items
       parameters:
       - in: query
+        name: item_id
+        description: The item id to find similar items for
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: page
+        description: Page number (max. 60)
+        required: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 60
+      - in: query
+        name: page_size
+        description: Number of items per page (max. 100)
+        required: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 100
+      responses:
+        '200':
+          description: Find similar items
+          content:
+            application/json:
+              schema:
+                type: object
+                x-unresolved-ref: '#/definitions/Result_SimpleEntity'
+      tags:
+      - Search
+      operationId: getSearchMoreLikeThis
+      summary: Get search more like this
+      x-summary-source: derived
+  /v1/discovery/search/search/comment:
+    get:
+      description: Search for comments
+      parameters:
+      - in: query
+        name: item_id
+        description: The item id to search for comments on
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - in: query
         name: term
-        schema:
-          type: string
-      - in: query
-        name: site
-        schema:
-          type: string
-      - in: query
-        name: category
+        description: The search phrase to find
+        required: false
         schema:
           type: string
       - in: query
         name: page
+        description: Page number (max. 60)
+        required: false
         schema:
           type: integer
-          default: 1
+          format: int32
+          minimum: 1
+          maximum: 60
       - in: query
         name: page_size
+        description: Number of items per page (max. 100)
+        required: false
         schema:
           type: integer
-          default: 20
+          format: int32
+          minimum: 1
+          maximum: 100
       - in: query
         name: sort_by
+        required: false
         schema:
           type: string
           enum:
+          - relevance
+          - newest
+          - oldest
+      responses:
+        '200':
+          description: Search for comments
+          content:
+            application/json:
+              schema:
+                type: object
+                x-unresolved-ref: '#/definitions/CommentResults'
+      tags:
+      - Search
+      operationId: getSearchComment
+      summary: Get search comment
+      x-summary-source: derived
+  /v1/discovery/search/search/item:
+    get:
+      description: Search for items
+      parameters:
+      - in: query
+        name: term
+        description: The string to search for
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: site
+        description: The site to match.
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - themeforest.net
+          - photodune.net
+          - codecanyon.net
+          - videohive.net
+          - audiojungle.net
+          - graphicriver.net
+          - 3docean.net
+      - in: query
+        name: tags
+        description: Comma separated list of tags to match
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: category
+        description: Category code to search for
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: platform
+        description: The platform to match
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: compatible_with
+        description: Frameworks or compatible software to match
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: colors
+        description: Comma separated list of colors to match
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: sizes
+        description: Comma separated list of sizes to match
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: size
+        description: A minimum photo size to match
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - xs
+          - s
+          - m
+          - l
+          - xl
+          - xxl
+      - in: query
+        name: sales
+        description: Name of the sales bucket to filter by (see the aggregation sales result)
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: rating_min
+        description: Minimum rating to filter by
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: price_min
+        description: Minimum price to include, in whole dollars
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: price_max
+        description: Maximum price to include, in whole dollars
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: poly_count
+        description: Preferred polygon count. Either a single polygon count or a range separated by `-`
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: item_type
+        description: The item type to match
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: suggest
+        description: Whether to include search suggestions
+        required: false
+        schema:
+          type: boolean
+      - in: query
+        name: date
+        description: Restrict items by original uploaded date
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - this-year
+          - this-month
+          - this-week
+          - this-day
+      - in: query
+        name: date_updated
+        description: Restrict items by updated date
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - this-year
+          - this-month
+          - this-week
+          - this-day
+      - in: query
+        name: length_min
+        description: Minimum video or audio length in the form, in seconds
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: length_max
+        description: Maximum video or audio length in the form, in seconds
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - in: query
+        name: tempo
+        description: One of very-slow, slow, medium, upbeat, fast and very-fast
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: alpha
+        description: Does the graphic include an alpha mask
+        required: false
+        schema:
+          type: boolean
+      - in: query
+        name: vocals_in_audio
+        description: 'The type of vocal content in audio files, comma separated, valid values: ''background vocals'', ''background vocals/harmonies'', ''lead vocals'', ''instrumental version included'', ''vocal samples'', ''no vocals'''
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: looped
+        description: Does the item loop seamlessly
+        required: false
+        schema:
+          type: boolean
+      - in: query
+        name: orientation
+        description: Image or video orientation to match
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - landscape
+          - portrait
+          - square
+      - in: query
+        name: requires_plugins
+        description: Restrict to items that do or don't require plugins
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - T
+          - F
+      - in: query
+        name: resolution_min
+        description: The minimum resolution for video content
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - 720p
+          - 1080p
+          - 2K
+          - 4K
+      - in: query
+        name: frame_rate
+        description: Match a particular FPS value for video content
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: page
+        description: Page number (max. 60)
+        required: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 60
+      - in: query
+        name: page_size
+        description: Number of items per page (max. 100)
+        required: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 1
+          maximum: 100
+      - in: query
+        name: attribute_key
+        description: 'The name of the attribute to search by, eg: compatible-with'
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: attribute_value
+        description: 'The attribute value to match, eg: Wordpress 3.5'
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: username
+        description: Username to restrict by
+        required: false
+        schema:
+          type: string
+      - in: query
+        name: sort_by
+        description: 'Sort by one of the following: relevance, rating, sales, price, date, updated, category, name, trending, featured_until'
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
           - relevance
           - rating
           - sales
@@ -61,21 +403,56 @@ paths:
           - category
           - name
           - trending
+          - featured_until
+          - random
+      - in: query
+        name: sort_direction
+        description: 'Sort direction. One of: asc, desc'
+        required: false
+        schema:
+          type: string
+          enum:
+          - ''
+          - asc
+          - desc
       responses:
         '200':
-          description: Paged search results
+          description: Search for items
+          content:
+            application/json:
+              schema:
+                type: object
+                x-unresolved-ref: '#/definitions/Result'
+      tags:
+      - Search
+      operationId: getSearchItem
+      summary: Get search item
+      x-summary-source: derived
 components:
   securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: Personal Token
-      description: 'Envato personal token issued from build.envato.com. Sent as `Authorization: Bearer <token>`.'
     oauth2:
       type: oauth2
       flows:
-        authorizationCode:
+        implicit:
           authorizationUrl: https://api.envato.com/authorization
-          tokenUrl: https://api.envato.com/token
           scopes:
-            default: Default Envato Market scope set
+            default: View and search Envato sites
+            user:username: View my Envato Account username
+            user:email: View my email address
+            user:account: View my account profile details
+            user:financial: View my account financial history
+            purchase:download: Download my purchased items
+            sale:history: View my items' sales history
+            sale:verify: Verify purchases of my items
+            purchase:list: List purchases I've made
+            purchase:verify: Verify purchases I've made
+            purchase:history: View my purchases of the app creator's items
+            user:favourite_collection_add: Add item to favourite collection
+            user:collections: View my public and private collections
+            user:statement: View my statement transactions
+            stat:total_users: View the total number of subscribed users to Envato Market
+            stat:total_items: Shows the total number of items available on Envato Market
+            stat:total_community_earnings: Shows the total amount of community earnings on Envato Market
+            stat:total_items_sold: Shows the total number of items sold on Envato Market
+x-source: https://api.envato.com/api-docs
+x-derived-from: openapi/_original/envato-api-docs.json

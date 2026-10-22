@@ -1,0 +1,40 @@
+generated: '2026-10-21'
+method: searched
+source: https://build.envato.com/api/
+auth:
+  style: Bearer token in Authorization header (OAuth 2.0 access token or personal token)
+  ref: authentication/envato-authentication.yml
+versioning:
+  style: path
+  note: Paths carry per-resource versions (/v1/market, /v3/market, /v1/discovery/search); no versioning policy is published.
+  ref: lifecycle/envato-lifecycle.yml
+idempotency:
+  coverage: none
+  note: No idempotency key or replay-protection mechanism is documented. The write surface is 4 operations (bookmark add/remove, collection create, favourite collection add).
+pagination:
+  style: page-number
+  note: Derived from the contract; see the page/page_size parameters on search and listing operations in openapi/envato-openapi.yml. Not described in the prose docs.
+errors:
+  envelope: undocumented
+  note: The docs publish no error reference; the contract declares only 200 responses. The only documented error is HTTP 429 with Retry-After.
+rate_limit_signaling:
+  status: 429
+  headers:
+  - Retry-After
+  ref: rate-limits/envato-rate-limits.yml
+request_id: undocumented
+reversibility:
+  coverage: partial
+  note: The only write surface is user bookmarks and collections. No reversal window is stated in the docs.
+  surfaces:
+  - write: putBookmarkAdd
+    reversal: deleteBookmarkRemove
+    window: null
+    grade: documented
+    evidence: openapi/envato-openapi.yml (PUT /v3/market/user/bookmark_add, DELETE /v3/market/user/bookmark_remove)
+  - write: postCollectionCreate
+    reversal: null
+    note: No collection delete operation in the contract.
+  - write: putUserFavouriteCollectionAdd
+    reversal: null
+    note: No corresponding remove operation in the contract.
