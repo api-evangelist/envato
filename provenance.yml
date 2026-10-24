@@ -7,32 +7,32 @@ artifacts:
     method: generated
     evidence: declared in the artifact
   authentication/envato-authentication.yml:
-    method: derived
+    method: searched
     evidence: declared in the artifact
   collections/envato-author-api.opencollection.json:
-    method: derived
-    evidence: openapi/envato-author-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-author-api.postman_collection.json:
-    method: derived
-    evidence: openapi/envato-author-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-catalog-api.opencollection.json:
-    method: derived
-    evidence: openapi/envato-catalog-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-catalog-api.postman_collection.json:
-    method: derived
-    evidence: openapi/envato-catalog-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-downloads-api.opencollection.json:
-    method: derived
-    evidence: openapi/envato-downloads-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-downloads-api.postman_collection.json:
-    method: derived
-    evidence: openapi/envato-downloads-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-items-api.opencollection.json:
-    method: derived
-    evidence: openapi/envato-items-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-items-api.postman_collection.json:
-    method: derived
-    evidence: openapi/envato-items-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-search-api.opencollection.json:
     method: derived
     evidence: openapi/envato-search-api
@@ -40,144 +40,63 @@ artifacts:
     method: derived
     evidence: openapi/envato-search-api
   collections/envato-user-api.opencollection.json:
-    method: derived
-    evidence: openapi/envato-user-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato-user-api.postman_collection.json:
-    method: derived
-    evidence: openapi/envato-user-api
+    method: unknown
+    evidence: no authorship recorded
   collections/envato.opencollection.json:
     method: derived
     evidence: openapi/envato
   collections/envato.postman_collection.json:
     method: derived
     evidence: openapi/envato
+  conformance/envato-conformance.yml:
+    method: searched
+    evidence: declared in the artifact
+  conventions/envato-conventions.yml:
+    method: searched
+    evidence: declared in the artifact
+  data-model/envato-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
   finops/envato-finops.yml:
     method: generated
     evidence: declared in the artifact
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  hosts/envato-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
+  integrations/_index.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+    evidence: carries an API Evangelist house phrase
+  integrations/envato-integration-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
+  json-ld/envato-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/envato-author-sale-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/envato-collection-details-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/envato-collection-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/envato-item-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/envato-market-purchase-for-author-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/envato-market-purchase-for-buyer-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -261,35 +180,62 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  lifecycle/envato-lifecycle.yml:
+    method: searched
+    evidence: declared in the artifact
+  mcp/envato-mcp-tools.json:
+    method: unknown
+    evidence: no authorship recorded
   mcp/envato-mcp.yml:
     method: unknown
     evidence: no authorship recorded
-  openapi/_original/envato-openapi.yml:
+  mcp/envato-tool-crosswalk.yml:
+    method: derived
+    evidence: declared in the artifact
+  openapi/_original/envato-api-docs.json:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
       to the provider's source is unverified
-  openapi/envato-author-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/envato-catalog-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/envato-downloads-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/envato-items-api-openapi.yml:
+  openapi/_original/envato-openapi.yml:
+    method: harvested
+    evidence: fetched from https://api.envato.com/api-docs (recorded in the document)
+  openapi/envato-market-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/envato-search-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  openapi/envato-user-api-openapi.yml:
-    method: derived
-    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
-  plans/envato-plans-pricing.yml:
+  overlays/envato-openapi-overlay.yaml:
     method: generated
     evidence: declared in the artifact
+  packages/envato-packages.yml:
+    method: searched
+    evidence: declared in the artifact
+  plans/envato-plans-pricing.yml:
+    method: searched
+    evidence: declared in the artifact
   rate-limits/envato-rate-limits.yml:
+    method: searched
+    evidence: declared in the artifact
+  regulatory/envato-regulatory-posture.yml:
+    method: searched
+    evidence: declared in the artifact
+  rules/envato-rules.yml:
     method: generated
     evidence: declared in the artifact
   scopes/envato-scopes.yml:
@@ -301,3 +247,66 @@ artifacts:
   security/envato-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
+  skills/_index.yml:
+    method: generated
+    evidence: declared in the artifact
+  skills/envato-download-purchases.md:
+    method: unknown
+    evidence: no authorship recorded
+  skills/envato-manage-collections.md:
+    method: unknown
+    evidence: no authorship recorded
+  skills/envato-search-market-items.md:
+    method: unknown
+    evidence: no authorship recorded
+  skills/envato-verify-purchase-code.md:
+    method: unknown
+    evidence: no authorship recorded
+  vendors/envato-vendors.yml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/envato-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/envato-account-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-api-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-app-oauth-authorization-server.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-app-oauth-protected-resource.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-app-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-author-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-build-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-community-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-elements-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-envato-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-mcp-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-well-known.yml:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/envato-www-security.txt:
+    method: unknown
+    evidence: no authorship recorded
