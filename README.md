@@ -1,4 +1,4 @@
-# Envato (envato)
+# Envato
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,78 +64,177 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Envato runs Envato Market (per-asset marketplaces like ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and earnings; Elements has a separate affiliate API.
+Envato runs Envato Market (per-asset marketplaces like ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, PhotoDune) and Envato Elements (subscription-based unlimited stock media). The Envato API exposes Market endpoints for items, search, downloads, user accounts, and earnings, documented at build.envato.com; Elements runs an affiliate program, but no public affiliate API documentation was found as of 2026-10.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/envato/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/envato/refs/heads/main/apis.yml)
+**Areas:** Stock Media · Marketplace · Themes · Audio · Video · Graphics · Subscription · Australia
 
-## Tags
+## Envato on APIs.io
 
-- Stock Media
-- Marketplace
-- Themes
-- Audio
-- Video
-- Graphics
-- Subscription
+Everything profiled for Envato is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/envato/](https://apis.io/providers/envato/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- [Envato Elements Affiliate API](https://apis.io/apis/envato/elements-affiliate/) — Affiliate-only API for Envato Elements (subscription-based stock media). Provides search and metadata for catalog discovery within affiliate properties; not…
+- [Envato Market API](https://apis.io/apis/envato/envato-market-api/) — The Market API from Envato — 36 operation(s) for market.
+- [Envato Search API](https://apis.io/apis/envato/envato-search-api/) — The search API from Envato — 3 operation(s) for search.
 
-## APIs
+### Published properties
 
-### Envato Market API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API for ThemeForest, CodeCanyon, AudioJungle, VideoHive, GraphicRiver, 3DOcean, and PhotoDune. Endpoints cover catalog (search, popular, new files), item detail, item downloads (for buyers), user (collections, badges, items), and author (earnings, sales). OAuth 2.0 authorization code or personal token authentication.
+#### MCP servers (1)
 
-- **Human URL:** [https://build.envato.com/api/](https://build.envato.com/api/)
-- **Base URL:** `https://api.envato.com`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [envato](https://apis.io/servers/envato/envato/)
 
-- Marketplace
-- Items
-- Search
-- Downloads
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://build.envato.com/api/)
-- [Authentication](https://build.envato.com/authentication/)
-- [Postman Collection](collections/envato.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/envato.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Envato Agentic Access](https://apis.io/agentic-access/envato/envato-agentic-access/)
 
-### Envato Elements Affiliate API
+#### JSON Schema (6)
 
-Affiliate-only API for Envato Elements (subscription-based stock media). Provides search and metadata for catalog discovery within affiliate properties; not a general-purpose download API.
+The data models the API reads and writes.
 
-- **Human URL:** [https://elements.envato.com/affiliates](https://elements.envato.com/affiliates)
-- **Base URL:** `https://elements.envato.com/api`
+- [AuthorSale](https://apis.io/schemas/envato/envato-author-sale/)
+- [Collection](https://apis.io/schemas/envato/envato-collection/)
+- [CollectionDetails](https://apis.io/schemas/envato/envato-collection-details/)
+- [Item](https://apis.io/schemas/envato/envato-item/)
+- [MarketPurchaseForAuthor](https://apis.io/schemas/envato/envato-market-purchase-for-author/)
+- [MarketPurchaseForBuyer](https://apis.io/schemas/envato/envato-market-purchase-for-buyer/)
 
-#### Tags
+#### JSON-LD (1)
 
-- Elements
-- Subscription
-- Affiliate
+Linked-data contexts for the provider's vocabulary.
 
-#### Properties
+- [Envato Context](https://apis.io/jsonld/envato/envato-context/)
 
-- [Documentation](https://elements.envato.com/affiliates)
-- [Postman Collection](collections/envato.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/envato.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (7)
 
-## Common Properties
+Postman and Open Collection request collections.
 
-- [GitHub Organization](https://github.com/envato)
-- [LinkedIn](https://www.linkedin.com/company/envato)
+- [Envato Market API](https://apis.io/collections/envato/open-envato/)
+- [Envato Market Author API](https://apis.io/collections/envato/open-envato-author-api/)
+- [Envato Market Author Catalog API](https://apis.io/collections/envato/open-envato-catalog-api/)
+- [Envato Market Author Downloads API](https://apis.io/collections/envato/open-envato-downloads-api/)
+- [Envato Market Author Items API](https://apis.io/collections/envato/open-envato-items-api/)
+- [Envato Market Author Search API](https://apis.io/collections/envato/open-envato-search-api/)
+- [Envato Market Author User API](https://apis.io/collections/envato/open-envato-user-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Envato Openapi Overlay](https://apis.io/overlays/envato/envato-openapi-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Envato API Rules](https://apis.io/rules/envato/envato-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Envato Authentication](https://apis.io/security/envato/envato-authentication/)
+- [Envato Domain Security](https://apis.io/security/envato/envato-domain-security/)
+- [Envato Vulnerability Disclosure](https://apis.io/security/envato/envato-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Envato Scopes](https://apis.io/scopes/envato/envato-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Envato Plans Pricing](https://apis.io/plans/envato/envato-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Envato Rate Limits](https://apis.io/rate-limits/envato/envato-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Envato Finops](https://apis.io/finops/envato/envato-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://envato.com/)
-- [Developer Portal](https://build.envato.com/)
-- [Plans](plans/envato-plans-pricing.yml)
-- [Rate Limits](rate-limits/envato-rate-limits.yml)
-- [Fin Ops](finops/envato-finops.yml)
+- [Documentation](https://help.author.envato.com/)
+- [Getting started](https://build.envato.com/api/#get-started)
+- [API reference](https://build.envato.com/api/)
+- [Pricing](https://elements.envato.com/pricing)
+- [Support](https://help.market.envato.com/hc/en-us)
+- [Blog](https://envato.com/blog/rss.xml)
+- [Security](https://www.envato.com/lp/vulnerability-disclosure/)
+- [Terms of service](https://build.envato.com/terms/)
+- [Privacy policy](https://www.envato.com/privacy/)
+- [GitHub](https://github.com/envato)
+- [Status](https://status.envato.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 54.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 70.0 |
+| Contract quality | 26.1 |
+| Contract governance | 35.6 |
+| Operational transparency | 50.0 |
+| Developer ergonomics | 54.2 |
+| Access clarity | 76.3 |
+
+**Agent readiness 55.7** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | mostly |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/envato/](https://apis.io/providers/envato/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Envato: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/envato/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
